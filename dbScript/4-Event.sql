@@ -1,0 +1,5 @@
+CREATE EVENT TIRAGE_CADEAU
+ON SCHEDULE EVERY 1 DAY
+DO
+   INSERT INTO messages(message,created_at)
+   VALUES('Test ALTER EVENT statement',NOW());
