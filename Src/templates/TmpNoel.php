@@ -12,16 +12,22 @@ error_log("Grosse bourde !", 0);
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
 
-        <link rel="stylesheet" href="../public/css/normalize.css">
-        <link rel="stylesheet" href="../public/css/main.css">
-
+        <link rel="stylesheet" href="Src/public/css/normalize.css">
+        <link rel="stylesheet" href="Src/public/css/main.css">
+        <link rel="stylesheet" href="Src/public/css/night.css">
+        
         <link rel="stylesheet" 
               href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
 
         <meta name="theme-color" content="#fafafa">
     </head>
-    <body> 
-        <?= $content ?>
+    <body>
+        
+        <div class="stars">
+        <div class="twinkling"><?= $content ?></div>
+        </div>
+        
+        
 
         <script src="../public/script/modernizr/modernizr-3.7.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
