@@ -28,7 +28,7 @@
         <div class="section">
             <h1 class="title"><?= $title ?></h1>
             <h2 class="subtitle">Nous sommes le 1er Décembre.</h2>
-            <progress class="progress is-success" value="1" max="25">1er jour</progress>
+            <progress class="progress is-success" style="background-image:url('Src/public/img/cadeaux.png');background-size:120px; height:50px" value="1" max="25">1er jour</progress>
         </div>
         <div class="section">
 
