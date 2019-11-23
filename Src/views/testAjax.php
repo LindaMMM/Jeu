@@ -11,6 +11,7 @@ require_once '../class/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../public/script/jquery/jquery-3.3.1.js"></script>
     <script src="../public/script/login.js"></script>
+    <script src="../public/script/jours.js"></script>
 </head>
 <body> 
 <div>
@@ -31,6 +32,10 @@ require_once '../class/config.php';
                         </form>
 </div>
 <div id="err">
+</div>
+<div>
+<h1>jours</h1>
+<button id="jours" value="Sign In">Entrer</button>
 </div>
 
 <h1>Main page </h1>

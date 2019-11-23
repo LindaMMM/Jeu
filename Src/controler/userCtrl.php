@@ -23,5 +23,13 @@ class UserCtrl {
 		return  $user;
 	}
 	
+	public static function GetJeu($idUser)
+    {
+		
+        $bd= new Database(DB_CSE);
+        $Jeu= new Jeu($bd);
+		$Jeu->getbyUserid($idUser);
+		return  $Jeu;
+	}
     
 }

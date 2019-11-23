@@ -17,7 +17,8 @@ class ConfigAutoLoader {
 	private static $classes = array(
 	
 		'Database' => 'Src/class/database.php',
-        'User' => 'Src/class/user.php',
+		'User' => 'Src/class/user.php',
+		'Jeu' => 'Src/class/jeu.php',
 		'UserCtrl' => 'Src/controler/userCtrl.php',
    
 	);
