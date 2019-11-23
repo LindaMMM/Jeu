@@ -16,9 +16,9 @@ class ConfigAutoLoader {
 	/** Maps classnames to files containing the class. */
 	private static $classes = array(
 	
-		'Database' => 'src/class/database.php',
-        'User' => 'src/class/user.php',
-		'UserCtrl' => 'src/controler/userCtrl.php',
+		'Database' => 'Src/class/database.php',
+        'User' => 'Src/class/user.php',
+		'UserCtrl' => 'Src/controler/userCtrl.php',
    
 	);
 	

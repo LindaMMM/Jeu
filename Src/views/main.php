@@ -13,10 +13,9 @@ require_once '../class/config.php';
 </head>
 <body> 
 <?php
-
-echo $_SESSION['ssoid'];
-
+    echo $_SESSION['ssoid'];
 ?>
+
 <h1>Main page </h1>
 
 <a>Jouer</a>

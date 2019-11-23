@@ -1,11 +1,13 @@
 <?php
 header("Pragma:no-cache");
 
-require_once 'src/class/config.php';
+require_once 'Src/class/config.php';
 
 if(!isset($_SESSION['ssoid'])){
-	$res=header('Location:src/views/login.php');
+	$res=header('Location:Src/views/login.php');
     echo '$res';
+}else{
+  echo $_SESSION['ssoid'];
 }
 ?>
 

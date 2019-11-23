@@ -73,7 +73,7 @@
 			return;
 		}
 		else if (strcmp($this->getPwd(), $pwd)==0){
-            echo("ok");
+            
             $this->setValid(true);
 			return;
 		}
@@ -88,6 +88,7 @@
 	{
         $query = "call pr_roles(?)";
         $result = $this->mydb->fetchAll( $this->getId().int());
+        echo "call proc";
         return $result;
         
 	}

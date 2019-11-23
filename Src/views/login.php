@@ -28,15 +28,17 @@ if($formulaire_envoyé)
 	
     $connexion = UserCtrl::Check($_POST['ssoId'],$_POST['password']);
 	if ($connexion->isValid()){
+        echo "Isvalid";
          $_SESSION['ssoid'] = $_POST['ssoId'];
          $_SESSION['user'] = json_encode($connexion) ;
+         echo "user";
          $_SESSION['roles'] =  $connexion->getRoles();
          echo var_dump($_SESSION);
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
     $extra = 'main.php';
    
-	// header("Location: http://$host$uri/$extra");
+	 header("Location: http://$host$uri/$extra");
 	}
 	else{
 		echo "Ce login n'est pas valide";
