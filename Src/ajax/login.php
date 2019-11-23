@@ -6,48 +6,34 @@
  * and open the template in the editor.
  */
 
-include("../../../data/protec/conf.php");
+include("../class/config.php");
 
     $respond->code=0;
-    $respond->message=$lang->err_202;
+    $respond->message="Login n'est pas valide";
     $respond->nextAction="";
     
     
 try {
-    if (!isset($_SESSION['LOGIN_CLT']))
-    {
+    $login =$_POST['ssoid'] ;
+    $pwd = $_POST['pwd'];
+
+    if (!isset($login)) {
         $respond->code=0;
-        $respond->message="La session n'est plus valide";
-        $respond->nextAction="$(location).attr('href','../index.php')";
+        $respond->message="Login n'est pas valide";
         echo json_encode( $respond );
         return;
     }
     
-    $login =$_SESSION['LOGIN_CLT'] ;
-    $pdwclt = $_SESSION['PWD_CLT']  ;
-    $pwd = $_POST["pwd"];
-    $pwd_new = $_POST["pwd_new"];
-    if (strcmp($pdwclt, $pwd) == 0)
-    {
-        $client = $_SERVER['REMOTE_ADDR'];
-        $result= ConnexionDistriCtrl::SaveConnexion($login,$pwd_new,$client);
-        
-        if ($result == ConnexionDistri::CONNEXION_OK)
-        {
-            $respond->code = 1;
-            $respond->message = Traduit('PwdChange');
-            $respond->nextAction = "$(location).attr('href','../index.php')";
-        }
-        else 
-        {
-            $respond->message = Traduit('PwdChangeErr');
-        }
-    }
+    
+	$connexion = UserCtrl::Check($login, $pwd);
+	if ($connexion->isValid()){
+		 $respond->code=1;
+		 $respond->message="Login ok ";
+	}
     else
     {
         /* le mot de passe n'est pas valide*/
         $respond->code=-1;
-        $respond->message=$lang->err_203;
     }
 } 
  catch (Exception $e) {

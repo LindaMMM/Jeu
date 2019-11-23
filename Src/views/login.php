@@ -9,7 +9,6 @@ require_once "../class/config.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
     <link rel="stylesheet" href="./public/css/font-awesome.min.css">
     <link href="./public/css/fonts.googleapis.com.css" rel="stylesheet">
     <!-- Bulma Version 0.7.2-->
@@ -34,11 +33,10 @@ if($formulaire_envoyé)
          echo "user";
          $_SESSION['roles'] =  $connexion->getRoles();
          echo var_dump($_SESSION);
-	$host  = $_SERVER['HTTP_HOST'];
-	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = 'main.php';
-   
-	 header("Location: http://$host$uri/$extra");
+	     $host  = $_SERVER['HTTP_HOST'];
+	     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+         $extra = 'main.php';
+         header("Location: http://$host$uri/$extra");
 	}
 	else{
 		echo "Ce login n'est pas valide";
