@@ -54,7 +54,7 @@ if($formulaire_envoyé)
                         <figure class="avatar">
                             <img src="./public/images/logo_150.png">
                         </figure>
-                        <form action="" method="post">
+                        <form id="idform" >
                             <div class="field">
                                 <div class="control">
                                     <input class="input is-large"  name="ssoId" type="username" placeholder="Votre login" autofocus="">

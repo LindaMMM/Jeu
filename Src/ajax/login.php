@@ -12,14 +12,13 @@ include("../class/config.php");
     $respond->message="Login n'est pas valide";
     $respond->nextAction="";
     
-    
 try {
     $login =$_POST['ssoid'] ;
     $pwd = $_POST['pwd'];
 
     if (!isset($login)) {
-        $respond->code=0;
-        $respond->message="Login n'est pas valide";
+        $respond->code=-1;
+        $respond->message="c'est vide.".var_dump($_POST);
         echo json_encode( $respond );
         return;
     }
@@ -33,7 +32,8 @@ try {
     else
     {
         /* le mot de passe n'est pas valide*/
-        $respond->code=-1;
+        $respond->code=-2;
+        $respond->message="Login n'est pas valide";
     }
 } 
  catch (Exception $e) {

@@ -1,36 +1,40 @@
 $(document).ready(function (e) {
- $("#form").on('submit',(function(e) {
-  e.preventDefault();
-  $.ajax({
-         url: "ajaxupload.php",
-   type: "POST",
-   data:  new FormData(this),
-   contentType: false,
-         cache: false,
-   processData:false,
-   beforeSend : function()
-   {
-    //$("#preview").fadeOut();
-    $("#err").fadeOut();
-   },
-   success: function(data)
-      {
-    if(data=='invalid')
-    {
-     // invalid file format.
-     $("#err").html("Invalid File !").fadeIn();
-    }
-    else
-    {
-     // view uploaded file.
-     $("#preview").html(data).fadeIn();
-     $("#form")[0].reset(); 
-    }
-      },
-     error: function(e) 
-      {
-    $("#err").html(e).fadeIn();
-      }          
-    });
- }));
+
+
+ $("#idform").on('submit',(function(e) {
+  var code = 0;
+  var msg = 'No response';
+  login = $('input[name=ssoid]').val();
+  pwd = $('input[name=pwd]').val();
+
+ 
+  event.preventDefault();  // Empêcher le rechargement de la page.
+  $.ajax({ dataType: "JSON",
+  type: "POST",url:"../../Src/ajax/login.php", data:{'ssoid':login,'pwd':pwd},
+    success: function (response) {
+      code = response.code;
+      msg = response.message;
+      connection = response.value;
+  },
+  error: function (response) {
+      code = response.code;
+      msg = response.message;
+  },
+  complete: function () {
+    $('#err').html(msg);
+          if (code>0)
+          {
+            //ok
+          }
+          else
+          {
+              
+          }
+  }
+});
+  // stop the form from submitting the normal way and refreshing the page
+  event.preventDefault();
+
+}));
+
 });
