@@ -1,11 +1,11 @@
 <?php
 header("Pragma:no-cache");
-error_log("Grosse bourde !", 0);
+require_once "../class/config.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
- <title>Connexion Agency </title>
+ <title>Connexion Cse </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,12 +22,25 @@ error_log("Grosse bourde !", 0);
 $formulaire_envoyé = isset($_POST['password']);
 if($formulaire_envoyé)
 {
-    echo "post data \n";
+    /*echo "post data \n";
     echo var_dump($_POST);
-    $host  = $_SERVER['HTTP_HOST'];
-		$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-		$extra = 'backoffice.php';
-		header("Location: http://$host$uri/$extra");
+	*/
+	
+    $connexion = UserCtrl::Check($_POST['ssoId'],$_POST['password']);
+	if ($connexion->isValid()){
+         $_SESSION['ssoid'] = $_POST['ssoId'];
+         $_SESSION['user'] = json_encode($connexion) ;
+         $_SESSION['roles'] =  $connexion->getRoles();
+         echo var_dump($_SESSION);
+	$host  = $_SERVER['HTTP_HOST'];
+	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'main.php';
+   
+	// header("Location: http://$host$uri/$extra");
+	}
+	else{
+		echo "Ce login n'est pas valide";
+	}
 }
 ?>
     <section class="hero has-background-grey is-fullheight ">

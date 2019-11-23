@@ -61,11 +61,27 @@ class MyPDOStatement extends PDOStatement {
             array_shift($args);
             $statement = $this->connection->prepare($sql);     
             $statement->execute($args);
-                return $statement->fetchAll(PDO::FETCH_OBJ);
+            return $statement->fetchAll(PDO::FETCH_OBJ);
          
         } catch (Exception $ex) {
+            echo($ex->getMessage());
             error_log($ex->getMessage());
             throw new Exception("Error SQL :fetchAll ");
+        }
+    }
+
+    public function execProc($sql){
+        try {
+            $args = func_get_args();
+            array_shift($args);
+            $statement = $this->connection->prepare($sql);     
+            return $statement->execute($args);
+            
+         
+        } catch (Exception $ex) {
+            echo($ex->getMessage());
+            error_log($ex->getMessage());
+            throw new Exception("Error SQL :execProc ");
         }
     }
     

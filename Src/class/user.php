@@ -10,6 +10,7 @@
     private $mydb;
     protected $id = 0; 
     protected $login,$pwd,$firstmame, $lastName='';
+	protected $valid=false;
  
     public function __construct($dbb){
         $this->setMydb($dbb);
@@ -31,11 +32,65 @@
   {
       $arrayVar = array(
          'login' => $this->login,
-           'pwd' => $this->pwd
+         'pwd' => $this->pwd
       );
       return $arrayVar;
   }
-
   
+  
+	
+	public function getbyLogin($login)
+    {
+        try 
+        {
+        
+        $query="SELECT iduser_app, sso_id, pwd_hash, email FROM user_app where del is null and sso_id=?";
+
+        $result = $this->mydb->fetchAll($query,$login);
+        if ($result && count($result)> 0 )
+        {
+            $this->setId($result[0]->iduser_app);
+            $this->setLogin($result[0]->sso_id);
+            $this->setPwd($result[0]->pwd_hash);
+            $this->setEmail($result[0]->email);
+            
+        }
+       
+        }  
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+            
+        }
+        
+        return ;
+    }
+	public function checkPwd ($pwd){
+      
+		if ($this->getId()==''){
+            $this->setValid(false);
+            
+			return;
+		}
+		else if (strcmp($this->getPwd(), $pwd)==0){
+            echo("ok");
+            $this->setValid(true);
+			return;
+		}
+		
+	}
+	
+	public function isValid()
+	{
+		return  $this->getValid();
+	}
+    public function getRoles()
+	{
+        $query = "call pr_roles(?)";
+        $result = $this->mydb->fetchAll( $this->getId().int());
+        return $result;
+        
+	}
+   
 
 }

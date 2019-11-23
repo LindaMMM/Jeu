@@ -1,4 +1,18 @@
 delimiter //
+
+CREATE PROCEDURE `pr_roles`( in idUser INTEGER)
+COMMENT 'Les rôles'
+  LANGUAGE SQL
+  NOT DETERMINISTIC
+  MODIFIES SQL DATA 
+
+BEGIN
+select r.* from role r 
+inner join user_app_has_role ur on ur.role_idRole = r.idRole
+where user_app_iduser_app = idUser and r.del<>1;
+
+END//
+
 CREATE PROCEDURE `searchUser`(in param1 DATE, in nbItem INTEGER)
 BEGIN
 Drop temporary table if exists $userSelec;

@@ -12,24 +12,13 @@ error_log("Grosse bourde !", 0);
    
     <link rel="stylesheet" href="./public/css/font-awesome.min.css">
     <link href="./public/css/fonts.googleapis.com.css" rel="stylesheet">
-    <!-- Bulma Version 0.7.2-->
+   <!-- Bulma Version 0.7.2-->
     <link rel="stylesheet" href="./public/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="./public/css/login.css">
     <link rel="stylesheet" href="./public/css/agency.css" />
 </head>
 <body> 
-<?php
-$formulaire_envoyé = isset($_POST['password']);
-if($formulaire_envoyé)
-{
-    echo "post data \n";
-    echo var_dump($_POST);
-    $host  = $_SERVER['HTTP_HOST'];
-		$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-		$extra = 'backoffice.php';
-		header("Location: http://$host$uri/$extra");
-}
-?>
+
     <section class="hero has-background-grey is-fullheight ">
     <div class="hero-body">
     <div class="container has-text-centered">
