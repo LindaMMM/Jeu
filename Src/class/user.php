@@ -83,14 +83,16 @@
 	public function isValid()
 	{
 		return  $this->getValid();
-	}
+    }
+    
     public function getRoles()
 	{
-        $query = "call pr_roles(?)";
-        $result = $this->mydb->fetchAll( $this->getId().int());
-        echo "call proc";
-        return $result;
-        
+        echo 'rools';
+        $query = "CALL pr_roles(?)";
+        echo 'call'.$this->id;
+        $result = $this->mydb->execProc($query, $this->getId().int());
+        echo 'test';
+        return $result; 
 	}
    
 

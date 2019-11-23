@@ -27,7 +27,10 @@ try {
 	$connexion = UserCtrl::Check($login, $pwd);
 	if ($connexion->isValid()){
 		 $respond->code=1;
-		 $respond->message="Login ok ";
+         $respond->message="Login ok ";
+         $_SESSION["ssoid"]=$login;
+         $_SESSION["iduser"]=$connexion->getId();
+        
 	}
     else
     {
