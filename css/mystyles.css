@@ -6990,4 +6990,7 @@ progress {
   color: #e61a23;
   text-shadow: 0.1em 0.1em 0.05em white; }
 
+.is-click {
+  cursor: pointer; }
+
 /*# sourceMappingURL=mystyles.css.map */

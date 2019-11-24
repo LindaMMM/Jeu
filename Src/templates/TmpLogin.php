@@ -27,16 +27,17 @@ error_log("Grosse bourde !", 0);
         <!-- Begin Hero -->
         <section class="hero is-large">
             <div class="hero-head">
+                <?= $content ?>
             </div>
             <!-- End Mobile Nav -->
-            <!-- Begin Hero Content-->
+             <!--Begin Hero Content-->
             <div class="hero-body">
-                <?= $content ?>
+                
             </div>
             <!-- End Hero Content-->
             <!-- Begin Hero Menu -->
-            <div class="hero-foot ">  
-            </div>
+<!--            <div class="hero-foot ">  
+            </div>-->
             <!-- End Hero Menu -->
         </section>
         <!-- End Hero -->
@@ -46,9 +47,9 @@ error_log("Grosse bourde !", 0);
     <!-- End Main Content -->
 
     <!-- Begin Footer -->
-    <div class="footer">
+<!--    <div class="footer">
 
-    </div>
+    </div>-->
     <!-- End Footer -->
 
     <!-- Scripts -->
