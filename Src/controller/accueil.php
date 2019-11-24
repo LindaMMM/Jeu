@@ -10,3 +10,7 @@ function accueil()
 {
     require('./src/views/indexView.php');
 }
+
+function login(){
+     require('./src/views/loginView.php');
+}
