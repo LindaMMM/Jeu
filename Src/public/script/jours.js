@@ -21,6 +21,7 @@ $(document).ready(function (e) {
       msg = response.message;
   },
   complete: function () {
+      console.log(connection);
     $('#res_jours').html(connection);
           if (code>0)
           {

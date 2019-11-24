@@ -32,7 +32,7 @@ $progress-value-background-color : hsl(357, 80%, 50%);
 @import "../Src/public/bulma-0.8.0/sass/layout/_all.sass";
 
 progress{
-    background-color:green;
+    background-color:#48c774;
     background-image:url('../Src/public/img/Fichier 5.png');
     background-repeat: repeat-x;
     background-size:150px;
@@ -57,7 +57,23 @@ progress{
 
 }
 
+.item-bottom{
+    align-items: start;
+}
 
+.is-the-one{
+    border-style: dotted;
+}
+
+
+.day-number{
+    position:absolute;
+    top:25%;
+    left:30%;
+    z-index:1;
+    color:#e61a23;
+    text-shadow: 0.1em 0.1em 0.05em white
+}
 
 
 

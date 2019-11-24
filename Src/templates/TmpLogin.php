@@ -47,7 +47,7 @@ error_log("Grosse bourde !", 0);
 
     <!-- Begin Footer -->
     <div class="footer">
-        
+
     </div>
     <!-- End Footer -->
 
@@ -58,6 +58,7 @@ error_log("Grosse bourde !", 0);
     <script>window.jQuery || document.write('<script src="../public/script/jquery/jquery-3.4.1.min.js"><\/script>')</script>
     <script src="Src/public/script/plugins.js"></script>
     <script src="Src/public/script/main.js"></script>
+    <script src="Src/public/script/login.js"></script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
         window.ga = function () {
@@ -68,6 +69,14 @@ error_log("Grosse bourde !", 0);
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('set', 'transport', 'beacon');
         ga('send', 'pageview');
+        $(document).ready(function () {
+
+            $('body').on('click', '.delete', function () {
+                $(this).parent().remove();
+            })
+
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
                 $notification = $delete.parentNode;

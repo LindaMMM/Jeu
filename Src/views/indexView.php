@@ -1,30 +1,16 @@
-<?php $title = 'Le Calendrier de Grogelec'; ?>
+<?php $title = 'Jouez'; ?>
 <?php ob_start(); ?>
 
-<div class="column is-8 is-offset-2">
+<div class="column is-4 is-offset-4 has-text-centered">
     <h1 class="title is-1 has-text-white"><?= $title ?></h1>
     <hr class="login-hr">
-    <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-end">
-            <span class="navbar-item">
-
-                <span><p class="heading has-text-white">Nous sommes le </p>
-                    <p class="title has-text-white">1er Décembre</p></span>
-
-            </span>
-            <span class="navbar-item">
-
-                <span><p class="heading"><span class="tag is-success">Le gain est ouvert</span></p>
-                    <p class="title has-text-white"><progress class="progress" value="1" max="25">1er jour</progress></p></span>
-
-            </span>
-
-        </div>
-    </div>
+    <p class="subtitle has-text-white">Votre calendrier de l'avent - Cogelec</p>
 </div>
 
 <div class="box">
 
+    <button id="jours">jours</button>
+    <div id="res_jours"></div>
 
     <div class="notification stars">
         <button class="delete"></button>
@@ -49,20 +35,57 @@
                     </div>
                 </div>
             </article>
-        </div>
+            <div class="navbar-menu">
+                <div class="navbar-end ">
+                    <span class="navbar-item item-bottom">
 
+                        <span>
+                        <p class="heading">
+                            <span class="tag is-info has-text-black"><i class="fas fa-calendar-minus" style="font-size: 48px;"></i>&nbsp;Nous sommes le </span></p>
+                        <div class="level">
+                            <div class="level-left"><div class="level-item box has-text-black">01</div></div> / <div class="level-right"><div class="level-item box has-text-black">12</div></div>
+                        </div>
+                        </span>
+
+
+                    </span>
+                    <span class="navbar-item item-bottom">
+
+                        <span><p class="heading"><span class="tag is-success has-text-black"><i class="fas fa-gift has-text-black" style="font-size: 48px;"></i>&nbsp;Le gain est ouvert</span></p>
+                            <p class="has-text-black">Va vite tenter ta chance !</p></span>
+
+                    </span>
+
+                    <span class="navbar-item item-bottom">
+
+                        <span><p class="heading"><span class="tag is-warning"><i class="fas fa-award" style="font-size: 48px;"></i>&nbsp;Qui a gagné ?</span></p>
+                            <p class="has-text-black">Consultes la liste des gagnants</p></span>
+
+                    </span>
+
+                    
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="subtitle">Progession des cadeaux / Il reste X cadeaux.</div>
+        <p class="title has-text-white"><progress class="progress" value="1" max="100">1er jour</progress></p></span>
     </div>
     <div class="section">
 
         <div class="row columns">
             <div class="column is-two-third">
-                <div class="card large">
-                    <div class="card-image">
+                <div class="card large is-the-one">
+                    <div class="card-image has-text-centered">
+                        <div class="title is-1 day-number">
+                            Jour <br/>01/12
+                        </div>
                         <figure class="image">
                             <img src="Src/public/img/back_day.jpg" alt="Image">
                         </figure>
                     </div>
-                    <div class="card-content has-background-grey-lighter">
+                    <div class="card-content has-background-warning">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-96x96">
@@ -82,9 +105,12 @@
                     </div>
                 </div>
             </div>
-            <div class="column is-two-third">
+            <div class="column is-two-third is-disabled">
                 <div class="card large">
                     <div class="card-image">
+                        <div class="title is-1 day-number">
+                            Jour <br/>02/12
+                        </div>
                         <figure class="image">
                             <img src="Src/public/img/back_day.jpg" alt="Image">
                         </figure>
@@ -114,7 +140,7 @@
                 <div class="card large">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="Src/public/img/back_day.jpg" alt="Image">
+                            
                         </figure>
                     </div>
                     <div class="card-content">
@@ -150,7 +176,7 @@
                 <div class="card large">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="Src/public/img/back_day.jpg" alt="Image">
+                            
                         </figure>
                     </div>
                     <div class="card-content">
@@ -179,7 +205,7 @@
                 <div class="card large">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="Src/public/img/back_day.jpg" alt="Image">
+                            
                         </figure>
                     </div>
                     <div class="card-content">
@@ -208,7 +234,7 @@
                 <div class="card large">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="Src/public/img/back_day.jpg" alt="Image">
+                            
                         </figure>
                     </div>
                     <div class="card-content">

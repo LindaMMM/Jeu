@@ -1,36 +1,48 @@
-<?php $title = 'Votre calendrier de l\'avent - Cogelec'; ?>
+<?php $title = 'Connexion'; ?>
 <?php ob_start(); ?>
 
 <div class="container has-text-centered">
     <div class="column is-4 is-offset-4">
-        <h3 class="subtitle is-1 has-text-white">Connexion</h3>
+        <h1 class="title is-1 has-text-white"><?= $title ?></h1>
         <hr class="login-hr">
-        <p class="subtitle has-text-white">Please login to proceed.</p>
+        <p class="subtitle has-text-white">Votre calendrier de l'avent - Cogelec</p>
         <div class="box">
             <figure class="avatar">
                 <img src="Src/public/img/pere_noel.jpg">
             </figure>
-            <form>
+            <div id="err"></div>
+            <form id="idform">
                 <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="email" placeholder="Votre identifiant" autofocus="">
+                    <div class="control has-icons-left">
+                        <input name="ssoid" class="input is-large" type="text" placeholder="Votre identifiant" autofocus="">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
                     </div>
+
                 </div>
 
                 <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="password" placeholder="Votre Mot de passe">
+                    <div class="control has-icons-left">
+                        <input  name="pwd" class="input is-large" type="password" placeholder="Votre Mot de passe">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
                     </div>
+
                 </div>
-                <div class="field">
+                
+<!--                <div class="field">
                     <label class="checkbox">
                         <input type="checkbox">
                         Se souvenir de moi
                     </label>
                 </div>
-                <a href="?page=accueil">test</a>
-                <button class="button is-block is-info is-large is-fullwidth">Connexion <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                <a href="?page=accueil">test</a>-->
+
+                <button class="button is-block is-info is-large is-fullwidth">Connexion <i class="fas fa-sign-in-alt"></i></button>
             </form>
+
         </div>
         <p class="has-text-grey">
             <a href="../">Sign Up</a> &nbsp;·&nbsp;
