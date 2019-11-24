@@ -87,12 +87,9 @@
     
     public function getRoles()
 	{
-        echo 'rools';
         $query = "CALL pr_roles(?)";
-        echo 'call'.$this->id;
-
-        $result = $this->mydb->execProc($query, int($this->getId()));
-        echo 'test';
+        $_id = intval($this->id);
+        $result = $this->mydb->fetchAll($query,$_id );
         return $result; 
 	}
    

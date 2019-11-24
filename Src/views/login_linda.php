@@ -25,7 +25,7 @@ if($formulaire_envoyé)
     echo var_dump($_POST);
 	*/
 	
-  /*  $connexion = UserCtrl::Check($_POST['ssoId'],$_POST['password']);
+    $connexion = UserCtrl::Check($_POST['ssoId'],$_POST['password']);
 	if ($connexion->isValid()){
         echo "Isvalid";
          $_SESSION['ssoid'] = $_POST['ssoId'];
@@ -36,17 +36,17 @@ if($formulaire_envoyé)
 	     $host  = $_SERVER['HTTP_HOST'];
 	     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
          $extra = 'main.php';
-         header("Location: http://$host$uri/$extra");
+         // header("Location: http://$host$uri/$extra");
 	}
 	else{
 		echo "Ce login n'est pas valide";
-    }*/
+    }
    /* $jeu = UserCtrl::GetJeu(7);
     echo (json_encode($jeu));*/
 
-    $jeu = UserCtrl::Jouer(7);
+   /* $jeu = UserCtrl::Jouer(7);
     echo (json_encode($jeu));
-
+*/
 }
 ?>
     <section class="hero has-background-grey is-fullheight ">
