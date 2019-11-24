@@ -131,6 +131,19 @@ error_log("Grosse bourde !", 0);
                     });
                 }
             });
+            
+            $(document).ready(function () {
+
+                $('body').on('click', '#is-the-one', function () {
+                    $('.modal').addClass('is-active');
+                    $('html').addClass('is-clipped');
+                });
+                $('body').on('click', '.modal-background', function(){
+                        $(this).parent().removeClass('is-active');
+                        $('html').removeClass('is-clipped');
+                });
+
+            });
 
         </script>
 

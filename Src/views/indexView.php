@@ -37,7 +37,15 @@
 
 <div class="section" id="jours">
     <div id="res_jours"></div>
-
+    <div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <p class="image is-4by3">
+      <img src="Src/public/img/present.gif" alt="">
+    </p>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 </div>
 </div>
 
