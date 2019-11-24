@@ -40,4 +40,11 @@ class UserCtrl {
 		$Jeu->Lancer($idUser);
 		return  $Jeu;
 	}
+
+	public static function GetAllCadeau()
+    {
+        $bd= new Database(DB_CSE);
+		$Cadeau= new Cadeau($bd);
+		return $Cadeau->getAll();
+	}
 }
