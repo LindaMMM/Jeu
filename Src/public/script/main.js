@@ -19,26 +19,28 @@ html += '<div class="column is-two-third">\n\
         if (obj[k] != 'N') {
             html += 'id= "is-the-one"';
         }
-        html += '><div class="card-image has-text-centered">';
+        html += '><div class="card-image">';
         if(!old){
-		html += '<div class="title is-1 day-number">\n\
-            Jour';
-        html += '<br/>' + k;
+		html += '<div class="title day-number">\n\
+            JOUR<br/>';
+        html += '<span class="day_detail"> ' + k +'</span>';
         html += '</div>';
 		}
         html +=    '<figure class="image">';
 		if(old){
-			html += '<img src="Src/public/img/doorv7.png" alt="Image">';
-		}else{
-			html += '<img src="Src/public/img/back_day.jpg" alt="Image">';
-		}
+			html += '<img src="Src/public/img/fond-end.png" alt="Image">';
+		}else if(obj[k] != 'N'){
+			html += '<img src="Src/public/img/fond-curr.png" alt="Image">';
+		}else{ html += '<img src="Src/public/img/fond-fut.png" alt="Image">'; }
         html += '</figure>\n\
             </div>';
+        if(!old){
         html += '<div class="card-content';
         if (obj[k] != 'N') {
             $('#date').html(k+'/12/2019');
             html += ' has-background-warning';
         }
+        
         html += '"><div class="media">\n\
             <div class="media-left"><figure class="image is-96x96">';
         if (obj[k] == 'N') {
@@ -48,6 +50,7 @@ html += '<div class="column is-two-third">\n\
         }
         html += '</figure>\n\
             </div>';
+        
         if (obj[k] == 'N') {
             html += '<div class="media-content">\n\
                 <p class="title is-4 no-padding">Tu attends !</p>\n\
@@ -63,7 +66,9 @@ html += '<div class="column is-two-third">\n\
                 </div></div><div class="content">Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.\n\
                 <div class="background-icon"><span class="icon-facebook"></span></div></div>';
         }
-        html += '</div></div></div>';
+        html += '</div>';
+        }
+        html += '</div></div>';
         
         
         

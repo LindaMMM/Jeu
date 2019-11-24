@@ -13,6 +13,17 @@ and open the template in the editor.
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Mountains+of+Christmas|Concert+One&display=swap');
 
+@font-face { 
+    font-family : "BigJohnPRO-Bold"; 
+    src: url("/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"),
+        url("../Src/public/font/bigjohnpro-bold-webfont.woff" ) format("woff");
+}
+@font-face { 
+    font-family : "BigJohnPRO-Regular"; 
+    src: url("/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"),
+        url("../Src/public/font/bigjohnpro-regular-webfont.woff" ) format("woff");
+}
+
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -68,11 +79,19 @@ progress{
 
 .day-number{
     position:absolute;
-    top:25%;
-    left:30%;
+    font-family: "BigJohnPRO-Bold";
+    font-size: 4rem;
     z-index:1;
-    color:#e61a23;
-    text-shadow: 0.1em 0.1em 0.05em white
+    color:white;
+    top: 21px;
+    left: 4px;
+    line-height: 2.5rem;
+}
+
+.day_detail{
+    font-family: "BigJohnPRO-Regular";
+    font-size: 2rem;
+    color:#8E2E2F;
 }
 
 .is-click{
