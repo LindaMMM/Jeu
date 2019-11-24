@@ -20,8 +20,8 @@ class ConfigAutoLoader {
 		'User' => 'Src/class/user.php',
 		'Jeu' => 'Src/class/jeu.php',
 		'Jouer' => 'Src/class/jouer.php',
+		'Cadeau' => 'Src/class/cadeau.php',
 		'UserCtrl' => 'Src/controler/userCtrl.php',
-   
 	);
 	
 	/**

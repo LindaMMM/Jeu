@@ -50,7 +50,7 @@
             $this->libGain = "Perdu";
             $this->estGagne = false;
             // check la date
-            // $this->checkDateJour();
+            $this->checkDateJour();
             
             if($this->mydb->beginTransaction()){
                 try 
@@ -79,13 +79,13 @@
                 {
                     
                     $this->mydb->rollBack();
-                    echo $e->getMessage();
+                    // echo $e->getMessage();
                 }
             }   
         }  
         catch(Exception $e)
         {
-            echo $e->getMessage();
+            // echo $e->getMessage();
         }
         
         return ;
