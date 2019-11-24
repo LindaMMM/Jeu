@@ -36,7 +36,7 @@ error_log("Grosse bourde !", 0);
                             <span>
                             <p class="heading">
                                 <span class="tag is-info has-text-black"><i class="fas fa-calendar-minus" style="font-size: 48px;"></i>&nbsp;Nous sommes le </span></p>
-                            <p class="has-text-black">01/12/2019</p></span>
+                            <p class="has-text-black" id="date">01/12/2019</p></span>
 
 
                         </div>

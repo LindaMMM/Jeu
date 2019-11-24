@@ -4,25 +4,39 @@ function GenerateDiv(json, type = 'jours') {
     first = '<div class="row columns">';
     last = '</div>';
     html = first;
+    old = true;
     for (var k in obj) {
-        console.log(obj[k]);
-        html += '<div class="column is-two-third">\n\
-            <div class="card large"';
+
+        if (old && obj[k] != 'N') {
+            old = false;;
+        }
+        
+html += '<div class="column is-two-third">\n\
+            <div class="card large' ;if (obj[k] != 'N') {
+            html += ' is-click';
+        }
+        html += '"';
         if (obj[k] != 'N') {
             html += 'id= "is-the-one"';
         }
-        html += '>\n\
-            <div class="card-image has-text-centered">\n\
-            <div class="title is-1 day-number">\n\
+        html += '><div class="card-image has-text-centered">';
+        if(!old){
+		html += '<div class="title is-1 day-number">\n\
             Jour';
         html += '<br/>' + k;
-        html += '</div>\n\
-            <figure class="image">';
-        html += '<img src="Src/public/img/back_day.jpg" alt="Image">';
+        html += '</div>';
+		}
+        html +=    '<figure class="image">';
+		if(old){
+			html += '<img src="Src/public/img/doorv7.png" alt="Image">';
+		}else{
+			html += '<img src="Src/public/img/back_day.jpg" alt="Image">';
+		}
         html += '</figure>\n\
             </div>';
         html += '<div class="card-content';
         if (obj[k] != 'N') {
+            $('#date').html(k+'/12/2019');
             html += ' has-background-warning';
         }
         html += '"><div class="media">\n\
@@ -50,6 +64,9 @@ function GenerateDiv(json, type = 'jours') {
                 <div class="background-icon"><span class="icon-facebook"></span></div></div>';
         }
         html += '</div></div></div>';
+        
+        
+        
         if (k % 3 == 0) {
             html += last;
             html += first;

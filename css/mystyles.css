@@ -6979,7 +6979,7 @@ progress {
 .item-bottom {
   align-items: start; }
 
-.is-the-one {
+#is-the-one {
   border-style: dotted; }
 
 .day-number {
