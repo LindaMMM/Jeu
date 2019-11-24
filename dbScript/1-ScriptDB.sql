@@ -130,8 +130,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `logindb`.`tirage` (
   `idtirage` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NULL,
-  `tiragecol` VARCHAR(45) NULL,
+  `datetir` DATE NULL,
   `Cadeau_idCadeau` INT NOT NULL,
   `user_app_iduser_app` INT NOT NULL,
   PRIMARY KEY (`idtirage`),

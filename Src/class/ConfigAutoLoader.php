@@ -19,6 +19,7 @@ class ConfigAutoLoader {
 		'Database' => 'Src/class/database.php',
 		'User' => 'Src/class/user.php',
 		'Jeu' => 'Src/class/jeu.php',
+		'Jouer' => 'Src/class/jouer.php',
 		'UserCtrl' => 'Src/controler/userCtrl.php',
    
 	);

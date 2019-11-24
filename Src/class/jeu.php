@@ -63,7 +63,6 @@
       return $arrayVar;
   }
   
-  
 	
 	public function getbyUserid($userid)
     {

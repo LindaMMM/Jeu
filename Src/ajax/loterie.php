@@ -10,13 +10,12 @@ include("../class/config.php");
 
     $respond->code=0;
     $respond->message="Aucune saisie valide";
-    $respond->value=array();
+    $respond->value = array();
+
     
 try {
-    $idUser =$_SESSION["iduser"] ;
-  
-   
-
+    $idUser = $_SESSION["iduser"] ;
+    
     if (!isset($idUser)) {
         $respond->code=-1;
         $respond->message="Pas de connexion";
@@ -24,12 +23,12 @@ try {
         return;
     }
     
-    $jours = UserCtrl::GetJeu($idUser);
-    
-	if ($jours->isValid()){
+    $jeu = UserCtrl::Jouer($idUser);
+   
+	if ($jeu->isValid()){
 		 $respond->code=1;
-         $respond->message="Jours charger";
-         $respond->value=json_encode($jours);
+         $respond->message="bien jouer";
+         $respond->value=json_encode($jeu);
         
 	}
     else

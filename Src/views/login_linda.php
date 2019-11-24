@@ -41,7 +41,10 @@ if($formulaire_envoyé)
 	else{
 		echo "Ce login n'est pas valide";
     }*/
-    $jeu = UserCtrl::GetJeu(7);
+   /* $jeu = UserCtrl::GetJeu(7);
+    echo (json_encode($jeu));*/
+
+    $jeu = UserCtrl::Jouer(7);
     echo (json_encode($jeu));
 
 }

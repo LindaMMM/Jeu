@@ -36,8 +36,14 @@ require_once '../class/config.php';
 <div>
 <h1>jours</h1>
 <button id="jours" value="Sign In">Entrer</button>
+<div id="res_jours">
 </div>
 
+<div>
+<h1>Jouer</h1>
+<button id="jouer" value="Jouer">JOUER</button>
+<div id="res_jouer">
+</div>
 <h1>Main page </h1>
 
 <a>Jouer</a>

@@ -97,6 +97,7 @@ class MyPDOStatement extends PDOStatement {
         $statement = $this->connection->prepare($sql);        
         return $statement->execute($args);
         } catch (Exception $ex) {
+            echo($ex->getMessage());
             error_log($ex->getMessage());
             throw new Exception("Error SQL :execReturnBool ");
         }

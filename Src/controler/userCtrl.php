@@ -25,11 +25,19 @@ class UserCtrl {
 	
 	public static function GetJeu($idUser)
     {
-		
         $bd= new Database(DB_CSE);
         $Jeu= new Jeu($bd);
 		$Jeu->getbyUserid($idUser);
 		return  $Jeu;
 	}
-    
+	
+	public static function Jouer($idUser)
+    {
+		
+        $bd= new Database(DB_CSE);
+		$Jeu= new Jouer($bd);
+	
+		$Jeu->Lancer($idUser);
+		return  $Jeu;
+	}
 }

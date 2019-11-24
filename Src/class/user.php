@@ -90,7 +90,8 @@
         echo 'rools';
         $query = "CALL pr_roles(?)";
         echo 'call'.$this->id;
-        $result = $this->mydb->execProc($query, $this->getId().int());
+
+        $result = $this->mydb->execProc($query, int($this->getId()));
         echo 'test';
         return $result; 
 	}
