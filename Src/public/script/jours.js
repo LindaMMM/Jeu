@@ -40,7 +40,7 @@ $(document).ready(function (e) {
 
 
 
-    $("#jouer").on('click', (function (e) {
+    $("body").on('click', '#is-the-one', (function (e) {
         console.log("jouer");
         var code = 0;
         var msg = 'No response';
@@ -48,28 +48,38 @@ $(document).ready(function (e) {
 
 
         event.preventDefault();  // Empêcher le rechargement de la page.
-        $.ajax({dataType: "JSON",
-            type: "POST", url: "../../Src/ajax/loterie.php",
-            success: function (response) {
-                code = response.code;
-                msg = response.message;
-                connection = response.value;
-            },
-            error: function (response) {
-                code = response.code;
-                msg = response.message;
-            },
-            complete: function () {
-                $('#res_jouer').html(connection);
-                if (code > 0)
-                {
-                    //ok
-                } else
-                {
-
+        setTimeout(function () {
+            $.ajax({dataType: "JSON",
+                type: "POST", url: "./Src/ajax/loterie.php",
+                success: function (response) {
+                    code = response.code;
+                    msg = response.message;
+                    connection = response.value;
+                },
+                error: function (response) {
+                    code = response.code;
+                    msg = response.message;
+                },
+                complete: function () {
+//                $('#res_jouer').html(connection);
+                    if (code > 0)
+                    {
+                        html = '<div class="notification is-info">\n\
+                            ' + connection + '\n\
+                            </span>\n\
+                        </div>';
+                        $('#res_jouer').html(html);
+                    } else
+                    {
+                        html = '<div class="notification is-danger">\n\
+                            ' + msg + '\n\
+                            </span>\n\
+                        </div>';
+                        $('#err_jouer').html(html);
+                    }
                 }
-            }
-        });
+            })
+        }, 2000);
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
 

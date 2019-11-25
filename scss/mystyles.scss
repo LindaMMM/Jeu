@@ -15,12 +15,12 @@ and open the template in the editor.
 
 @font-face { 
     font-family : "BigJohnPRO-Bold"; 
-    src: url("/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"),
+    src: url("../Src/public/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"),
         url("../Src/public/font/bigjohnpro-bold-webfont.woff" ) format("woff");
 }
 @font-face { 
     font-family : "BigJohnPRO-Regular"; 
-    src: url("/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"),
+    src: url("../Src/public/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"),
         url("../Src/public/font/bigjohnpro-regular-webfont.woff" ) format("woff");
 }
 
@@ -41,6 +41,7 @@ $progress-value-background-color : hsl(357, 80%, 50%);
 @import "../Src/public/bulma-0.8.0/sass/form/_all.sass";
 @import "../Src/public/bulma-0.8.0/sass/grid/_all.sass";
 @import "../Src/public/bulma-0.8.0/sass/layout/_all.sass";
+@import "../Src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css";
 
 progress{
     background-color:#48c774;
@@ -138,6 +139,10 @@ progress{
         transform: translateY(0);
     }
     
+}
+
+.pageloader{
+    background-color:#48C774;
 }
 
 

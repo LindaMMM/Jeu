@@ -9,12 +9,13 @@ and open the template in the editor.
     Author     : Tony
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Mountains+of+Christmas|Concert+One&display=swap");
+@import url(../Src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css);
 @font-face {
   font-family: "BigJohnPRO-Bold";
-  src: url("/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-bold-webfont.woff") format("woff"); }
+  src: url("../Src/public/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-bold-webfont.woff") format("woff"); }
 @font-face {
   font-family: "BigJohnPRO-Regular";
-  src: url("/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-regular-webfont.woff") format("woff"); }
+  src: url("../Src/public/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-regular-webfont.woff") format("woff"); }
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -7033,5 +7034,7 @@ progress {
 @keyframes fall {
   100% {
     transform: translateY(0); } }
+.pageloader {
+  background-color: #48C774; }
 
 /*# sourceMappingURL=mystyles.css.map */

@@ -44,6 +44,8 @@
         <div class="modal-content">
             <p class="image is-4by3">
                 <img src="Src/public/img/present.gif" alt="">
+                <div id="res_jouer"></div>
+                <div id="err_jouer"></div>
             </p>
         </div>
         <button class="modal-close is-large" aria-label="close"></button>

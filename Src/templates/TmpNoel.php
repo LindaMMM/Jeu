@@ -9,8 +9,8 @@ error_log("Grosse bourde !", 0);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+        <link rel="icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="favicon.png">
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -22,7 +22,9 @@ error_log("Grosse bourde !", 0);
         <meta name="theme-color" content="#fafafa">
     </head>
     <body>
+        
         <section class="hero is-fullheight">
+            <div class="pageloader is-active"><span class="title">Tu me vois... tu ne me verras plus.</span></div>
             <div class="snow">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
                 <g fill="#FFF" fill-opacity=".15" transform="translate(55 42)">
@@ -218,8 +220,22 @@ error_log("Grosse bourde !", 0);
                     $(this).parent().removeClass('is-active');
                     $('html').removeClass('is-clipped');
                 })
+                
 
             });
+            
+            var $loading = $('.pageloader');
+                $(document)
+                        .ajaxStart(function () {
+                            console.log('charge');
+                            $loading.addClass('is-active');
+                        })
+                        .ajaxStop(function () {
+                            console.log('fin');
+                            $loading.removeClass('is-active');
+                        });
+
+
 
         </script>
 
