@@ -19,7 +19,7 @@ try {
 
     if (!isset($idUser)) {
         $respond->code = -1;
-        $respond->message = "Pas de connexion";
+        $respond->message = "Le site a rencontré un problème";
         echo json_encode($respond);
         return;
     }
@@ -33,11 +33,11 @@ try {
     } else {
         /* le mot de passe n'est pas valide */
         $respond->code = -2;
-        $respond->message = "Pas de jeu";
+        $respond->message = "Le site a rencontré un problème";
     }
 } catch (Exception $e) {
     $respond->code = -5;
-    $respond->message = $e->getMessage();
+    $respond->message = "Le site a rencontré un problème";
 }
 
 $myResponsJSON = json_encode($respond);

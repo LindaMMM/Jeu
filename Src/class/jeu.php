@@ -109,8 +109,9 @@
         }  
         catch(Exception $e)
         {
-            // echo $e->getMessage();   
-        }
+           throw new Exception("Error jeu.getbyUserid"); 
+        }  
+        
         
         return ;
     }

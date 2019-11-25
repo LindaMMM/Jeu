@@ -80,12 +80,14 @@
                     
                     $this->mydb->rollBack();
                     // echo $e->getMessage();
+                    throw new Exception("Error jouer.Lancer transaction"); 
                 }
             }   
         }  
         catch(Exception $e)
         {
             // echo $e->getMessage();
+            throw new Exception("Error jouer.Lancer"); 
         }
         
         return ;
