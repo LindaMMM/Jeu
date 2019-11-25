@@ -14,7 +14,6 @@ error_log("Grosse bourde !", 0);
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/night.css">
         <link rel="stylesheet" 
               href="css/mystyles.css">
 
@@ -22,7 +21,7 @@ error_log("Grosse bourde !", 0);
         <meta name="theme-color" content="#fafafa">
     </head>
     <body>
-        
+
         <section class="hero is-fullheight">
             <div class="pageloader is-active"><span class="title">Tu me vois... tu ne me verras plus.</span></div>
             <div class="snow">
@@ -98,19 +97,19 @@ error_log("Grosse bourde !", 0);
                 </svg>
             </div>
             <div class="hero-head" style="z-index:1">
-                <a role="button" class="navbar-burger has-text-white" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <a role="button" class="navbar-burger has-text-white is-fixed-top " data-target="navMenu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
-                <nav class="navbar-menu level" style="margin-top:2%;padding:2% 0" id='navMenu'>
+                <nav class="navbar navbar-menu level" style="margin-top:2%;padding:2% 0" id='navMenu'>
                     <div class="level-item has-text-centered is-click">
                         <div>
 
                             <span>
                                 <p class="heading">
                                     <span class="tag is-info has-text-black"><i class="fas fa-calendar-minus" style="font-size: 48px;"></i>&nbsp;Nous sommes le </span></p>
-                                <p class="has-text-black" id="date">01/12/2019</p></span>
+                                <p class="to-hide has-text-black" id="date">01/12/2019</p></span>
 
 
                         </div>
@@ -120,20 +119,20 @@ error_log("Grosse bourde !", 0);
                         <div>
 
                             <span><p class="heading"><span class="tag is-success has-text-black"><i class="fas fa-gift has-text-black" style="font-size: 48px;"></i>&nbsp;Le gain est ouvert</span></p>
-                                <p class="has-text-black">Va vite tenter ta chance !</p></span>
+                                <p class="to-hide has-text-black">Va vite tenter ta chance !</p></span>
 
                         </div>
 
                     </a>
                     <p class="level-item has-text-centered">
-                        <span class="title is-1 has-text-white"><?= $title ?></span>
+                        <span class="to-hide title is-1 has-text-white"><?= $title ?></span>
                     </p>
                     <a href="?page=top" class="level-item has-text-centered is-click">
 
                         <div>
 
                             <span><p class="heading"><span class="tag is-warning"><i class="fas fa-award" style="font-size: 48px;"></i>&nbsp;Qui a gagné ?</span></p>
-                                <p class="has-text-black">Consultes la liste des gagnants</p></span>
+                                <p class="to-hide has-text-black">Consultes la liste des gagnants</p></span>
 
                         </div>
 
@@ -144,7 +143,7 @@ error_log("Grosse bourde !", 0);
                         <div>
 
                             <span><p class="heading"><span class="tag is-danger"><i class="fas fa-sign-out-alt has-text-black" style="font-size: 48px;"></i></i>&nbsp;Se deconnecter</span></p>
-                                <p class="has-text-black">Alors tu nous quittes ? :(</p></span>
+                                <p class="to-hide has-text-black">Alors tu nous quittes ? :(</p></span>
 
                         </div>
 
@@ -153,7 +152,7 @@ error_log("Grosse bourde !", 0);
                     </div>
                 </nav>
             </div>
-            <div class="hero-body">
+            <div class="hero-body ">
                 <div class="container">
                     <?= $content ?>
                 </div>
@@ -200,9 +199,11 @@ error_log("Grosse bourde !", 0);
                             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                             el.classList.toggle('is-active');
                             $target.classList.toggle('is-active');
+                            $('.to-hide').hide();
 
                         });
                     });
+                    
                 }
             });
 
@@ -220,20 +221,20 @@ error_log("Grosse bourde !", 0);
                     $(this).parent().removeClass('is-active');
                     $('html').removeClass('is-clipped');
                 })
-                
+
 
             });
-            
+
             var $loading = $('.pageloader');
-                $(document)
-                        .ajaxStart(function () {
-                            console.log('charge');
-                            $loading.addClass('is-active');
-                        })
-                        .ajaxStop(function () {
-                            console.log('fin');
-                            $loading.removeClass('is-active');
-                        });
+            $(document)
+                    .ajaxStart(function () {
+                        console.log('charge');
+                        $loading.addClass('is-active');
+                    })
+                    .ajaxStop(function () {
+                        console.log('fin');
+                        $loading.removeClass('is-active');
+                    });
 
 
 

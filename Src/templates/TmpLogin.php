@@ -14,7 +14,6 @@ error_log("Grosse bourde !", 0);
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/night.css">
         <link rel="stylesheet" 
               href="css/mystyles.css">
 
