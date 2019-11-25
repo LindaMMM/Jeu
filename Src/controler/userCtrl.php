@@ -36,7 +36,6 @@ class UserCtrl {
 		
         $bd= new Database(DB_CSE);
 		$Jeu= new Jouer($bd);
-	
 		$Jeu->Lancer($idUser);
 		return  $Jeu;
 	}
@@ -46,5 +45,12 @@ class UserCtrl {
         $bd= new Database(DB_CSE);
 		$Cadeau= new Cadeau($bd);
 		return $Cadeau->getAll();
+	}
+
+	public static function GetAllCadeauGagner()
+    {
+        $bd= new Database(DB_CSE);
+		$Cadeau= new Cadeau($bd);
+		return $Cadeau->getAllGagner();
 	}
 }
