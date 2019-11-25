@@ -73,8 +73,8 @@
             {
                 $this->createJeu($userid);
             }
-
-        $query="SELECT idjeuNoel, `user_app_iduser_app`, `jour1`, `jour2`, `jour3`,`jour4`, `jour5`, `jour6`, `jour7`,  `jour8`,  `jour9`,  `jour10`,  `jour11`,  `jour12`,  `jour13`,  `jour14`,  `jour15`,  `jour16`,  `jour17`,  `jour18`,  `jour19`,  `jour20`,  `jour21`,  `jour22`,  `jour23`, `jour24` FROM `jeunoel` where user_app_iduser_app=?";
+        $queryDay = $this->buildQueryDay();
+        $query="SELECT idjeuNoel, $queryDay `user_app_iduser_app`   FROM `jeunoel` where user_app_iduser_app=?";
 
         $result = $this->mydb->fetchAll($query,$userid);
         if ($result && count($result)> 0 )
@@ -106,15 +106,37 @@
             $this->setJour23($result[0]->jour23);
             $this->setJour24($result[0]->jour24);
         }
-       
         }  
         catch(Exception $e)
         {
-            echo $e->getMessage();
-            
+            // echo $e->getMessage();   
         }
         
         return ;
+    }
+
+    private function buildQueryDay()
+    {
+        $queryday="";
+        $day = intval(date("d"));
+        
+        if ($day > 24)
+        {
+            $day = 24;
+        }
+
+        // Echu
+        for ($i = 1; $i <= ($day - 1); $i++) {
+            $queryday.="'E' as `jour".$i."`, ";
+        }
+
+        if ($day <= 24)
+        {
+            for ($j = $day; $j == 24; $j++) {
+                $queryday.="`jour".$j."`, ";
+            }
+        }
+        return $queryday;
     }
 
     private function isExistLogin($login)

@@ -53,4 +53,12 @@ class UserCtrl {
 		$Cadeau= new Cadeau($bd);
 		return $Cadeau->getAllGagner();
 	}
+
+	public static function GetCountCadeau()
+    {
+		echo("compt \n");
+        $bd= new Database(DB_CSE);
+		$Cadeau= new Cadeau($bd);
+		return $Cadeau->getCount();
+	}
 }

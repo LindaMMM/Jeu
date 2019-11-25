@@ -83,30 +83,25 @@
         return null;
     }
 
-    //
-    // GetCount
-    // 
+    ///------------------------------
+    /// GetCount
+    ///-----------------------------
     public function getCount()
     {
+        echo("compt \n");
         try 
         {
-        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app";
-       
-        $result = $this->mydb->fetchAll($query);
-        if ($result && count($result)> 0 )
+            $query="SELECT count(idCadeau) as nbCadeau, count(distinct user_app_iduser_app, dateGain) as nbCadeauGagner  FROM cadeau";
+            $result = $this->mydb->fetchAll($query);
+            if ($result && count($result)> 0 )
             {
-                
                 return $result;
             }
-       
         }  
         catch(Exception $e)
         {
-            echo $e->getMessage();
-            
-        }
-        
+           echo $e->getMessage();   
+        }   
         return null;
     }
-
 }
