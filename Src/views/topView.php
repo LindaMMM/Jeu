@@ -34,7 +34,7 @@
     <p class="title has-text-white"><progress class="progress" value="1" max="100">1er jour</progress></p>
 
     <div class="section" id="jours">
-
+        <div id="gagant"></div>
         <div class="modal">
             <div class="modal-background"></div>
             <div class="modal-content">
