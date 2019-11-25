@@ -13,8 +13,8 @@ include("../class/config.php");
     $respond->value = array();
     
 try {
-
-    $gagant = UserCtrl::GetAllCadeau();
+    //$gagant = UserCtrl::GetAllCadeau();
+    $gagant = UserCtrl::GetAllCadeauGagner();
     $output = array();
     if ($gagant!=false)
     {

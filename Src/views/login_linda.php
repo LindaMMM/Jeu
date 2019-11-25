@@ -24,7 +24,7 @@ if($formulaire_envoyé)
     /*echo "post data \n";
     echo var_dump($_POST);
 	*/
-	
+	/*
     $connexion = UserCtrl::Check($_POST['ssoId'],$_POST['password']);
 	if ($connexion->isValid()){
         echo "Isvalid";
@@ -41,8 +41,12 @@ if($formulaire_envoyé)
 	else{
 		echo "Ce login n'est pas valide";
     }
-   /* $jeu = UserCtrl::GetJeu(7);
-    echo (json_encode($jeu));*/
+    */
+    $jeu = UserCtrl::GetJeu(7);
+    echo (json_encode($jeu));
+
+    $count = UserCtrl::GetCountCadeau();
+    echo (json_encode($count));
 
    /* $jeu = UserCtrl::Jouer(7);
     echo (json_encode($jeu));
