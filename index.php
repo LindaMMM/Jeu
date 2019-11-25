@@ -7,6 +7,10 @@ if (isset($_GET['page'])) {
         accueil();
         return;
     }
+    if($_GET['page'] == 'top'){
+        top();
+        return;
+    }
     login();
     return;
 }

@@ -1,9 +1,11 @@
-<?php $title = 'Jouez'; ?>
+<?php $title = '<i class="fas fa-gift has-text-black" style="font-size: 48px;"></i>&nbsp;Le gain est ouvert'; ?>
 <?php ob_start(); ?>
+
+
 
 <div class="box">
     <div id="err"></div>
-    <div class="notification stars">
+    <div class="notification stars has-background-success">
         <button class="delete"></button>
         <div class="box">
             <article class="media">
@@ -17,11 +19,11 @@
                         <p>
                             <strong>Le père breizh noel</strong> <small>@breizhnoel</small> <small>31m</small>
                             <br>
-                            Ohohoh (géééééééééant vert)<br/>
-                            Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot.
-                            Vu que c'est avant Noel, te plains pas si tu as perdu et que tu n'as pas de cadeau !
-                            Ca viendra le 25.<br/>
-                            Je t'en prie, fais toi plaisir.
+                                Ohohoh (géééééééééant vert)<br/>
+                                Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot.
+                                Vu que c'est avant Noel, te plains pas si tu as perdu et que tu n'as pas de cadeau !
+                                Ca viendra le 25.<br/>
+                                Je t'en prie, fais toi plaisir.
                         </p>
                     </div>
                 </div>
@@ -33,19 +35,19 @@
 
 
     <div class="subtitle">Progession des cadeaux / Il reste X cadeaux.</div>
-    <p class="title has-text-white"><progress class="progress" value="1" max="100">1er jour</progress></p></span>
+    <p class="title has-text-white"><progress class="progress" value="1" max="100">1er jour</progress></p>
 
 <div class="section" id="jours">
     <div id="res_jours"></div>
     <div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <p class="image is-4by3">
-      <img src="Src/public/img/present.gif" alt="">
-    </p>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <p class="image is-4by3">
+                <img src="Src/public/img/present.gif" alt="">
+            </p>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 </div>
 </div>
 

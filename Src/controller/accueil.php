@@ -21,3 +21,11 @@ function login() {
         require('./src/views/loginView.php');
     }
 }
+
+function top(){
+    if (isset($_SESSION["ssoid"]) && $_SESSION["iduser"]) {
+        require('./src/views/topView.php');
+    } else {
+        require('./src/views/topView.php');
+    }
+}
