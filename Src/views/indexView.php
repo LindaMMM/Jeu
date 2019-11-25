@@ -9,7 +9,7 @@
             <article class="media">
                 <div class="media-left">
                     <figure class="image is-128x128">
-                        <img src="Src/public/img/pere_noel.jpg" alt="Image">
+                        <img src="Src/public/img/breiznoel-info.png" alt="Image">
                     </figure>
                 </div>
                 <div class="media-content">

@@ -44,9 +44,9 @@ html += '<div class="column is-two-third">\n\
         html += '"><div class="media">\n\
             <div class="media-left"><figure class="image is-96x96">';
         if (obj[k] == 'N') {
-            html += '<img src="Src/public/img/elfe.jpg" alt="Image">';
+            html += '<img src="Src/public/img/lutin.png" alt="Image">';
         } else {
-            html += '<img src="Src/public/img/pere_noel.jpg" alt="Image">';
+            html += '<img src="Src/public/img/breiznoel.png" alt="Image">';
         }
         html += '</figure>\n\
             </div>';
@@ -61,7 +61,7 @@ html += '<div class="column is-two-third">\n\
         } else {
             html += '<div class="media-content">\n\
                 <p class="title is-4 no-padding">On t\'attend !</p>\n\
-                <p><span class="title is-6"><a href="http:///#">ohoho ! Ouvre chenapan</a></span></p>\n\
+                <p><span class="title is-6"><a href="http:///#">ohoho ! Ouvre !</a></span></p>\n\
                 <p class="subtitle is-6">Le père breizh noel</p>\n\
                 </div></div><div class="content">Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.\n\
                 <div class="background-icon"><span class="icon-facebook"></span></div></div>';
