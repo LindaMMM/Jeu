@@ -60,5 +60,53 @@
         return null;
     }
    
+    public function getAllGagner()
+    {
+        try 
+        {
+        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app";
+       
+        $result = $this->mydb->fetchAll($query);
+        if ($result && count($result)> 0 )
+            {
+                
+                return $result;
+            }
+       
+        }  
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+            
+        }
+        
+        return null;
+    }
+
+    //
+    // GetCount
+    // 
+    public function getCount()
+    {
+        try 
+        {
+        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app";
+       
+        $result = $this->mydb->fetchAll($query);
+        if ($result && count($result)> 0 )
+            {
+                
+                return $result;
+            }
+       
+        }  
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+            
+        }
+        
+        return null;
+    }
 
 }
