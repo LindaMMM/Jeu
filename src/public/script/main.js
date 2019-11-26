@@ -2,15 +2,7 @@
 function GenerateDiv(json, type = 'jours') {
     var obj = jQuery.parseJSON(json);
 
-    var click = '';
-    var id = '';
-    var back = '';
-    var fond_url = '';
-    var perso_url = '';
-    var title = '';
-    var subtitle = '';
-    var perso = '';
-    var text = '';
+
     var k = 0;
     var first = '<div class="row columns">';
     var last = '</div>';
@@ -18,6 +10,16 @@ function GenerateDiv(json, type = 'jours') {
 
     var choosen = false;
     for (var k in obj) {
+
+        var click = '';
+        var id = '';
+        var back = '';
+        var fond_url = '';
+        var perso_url = '';
+        var title = '';
+        var subtitle = '';
+        var perso = '';
+        var text = '';
 
         var div = '';
         if (!choosen && obj[k] != 'E') {
@@ -42,7 +44,7 @@ function GenerateDiv(json, type = 'jours') {
             text = 'Bon... écoute. On n\'est pas prêt...<br/>T\'as ton éléphant Jumbo pour t\'aider à décompresser et patienter ?';
         } else {
             fond_url = 'src/public/img/fond-end.png';
-            
+
         }
 
         console.log(fond_url);
@@ -65,7 +67,7 @@ function GenerateDiv(json, type = 'jours') {
             html += last;
             html += first;
         }
-        
+
     }
     html += last;
     $('#res_jours').html(html);
@@ -75,7 +77,7 @@ function GenerateDiv(json, type = 'jours') {
 
 class DivsCards {
 
-    constructor(click = '', id = '', back = '', fond_url ='', perso_url = '', title = '', subtitle = '', perso = '', text = '', k = '') {
+    constructor(click = '', id = '', back = '', fond_url = '', perso_url = '', title = '', subtitle = '', perso = '', text = '', k = '') {
         this.click = click;
         this.id = id;
         this.back = back;
@@ -113,7 +115,7 @@ class DivsCards {
                                     <div class="content">' + this.text + '</div>\n\
                                 </div>';
         var div_card_content_media_end = '</div>';
-        var div_card_content_end = '<div>';
+        var div_card_content_end = '<div></div></div>';
         var div_card_end = '</div>';
         var div_head_end = '</div>';
 
