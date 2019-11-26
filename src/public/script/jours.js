@@ -111,15 +111,16 @@ $(document).ready(function (e) {
 
                     } else
                     {
+                        $('#present_gif').attr("src", "src/public/img/present-perte.gif");
                         html = '<div class="notification is-danger">\n\
                             ' + msg + '\n\
                             </span>\n\
                         </div>';
-                        $('#err_jouer').html(html);
+//                        $('#err_jouer').html(html);
                     }
                 }
             })
-        }, 2000);
+        }, 4000);
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
     }));
