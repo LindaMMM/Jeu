@@ -82,7 +82,6 @@ class DivsCards {
         this.id = id;
         this.back = back;
         this.fond_url = fond_url;
-        console.log(this.fond_url);
         this.perso_url = perso_url;
         this.title = title;
         this.subtitle = subtitle;
@@ -107,15 +106,14 @@ class DivsCards {
         var div_card_image_end = '</div>';
         var div_card_content_start = '<div class="card-content ' + this.back + '">';
         var div_card_content_media_start = '<div class="media">';
-        var div_card_content_media_img = '<div class="media-left"><figure class="image is-96x96"><img src="' + this.perso_url + '" alt="' + this.perso + '"></figure></div>';
+        var div_card_content_media_img = '<div class="media-left"><figure class="image portrait"><img src="' + this.perso_url + '" alt="' + this.perso + '"></figure></div>';
         var div_card_content_media_content = '<div class="media-content">\n\
                                     <p class="title is-4 no-padding">' + this.title + '</p>\n\
-                                    <span class="title is-6">' + this.subtitle + '</a></span>\n\
-                                    <p class="subtitle is-6">' + this.perso + '</p>\n\
+                                    <p class="subtitle is-6">' + this.perso + '</p></div></div>\n\
                                     <div class="content">' + this.text + '</div>\n\
                                 </div>';
-        var div_card_content_media_end = '</div>';
-        var div_card_content_end = '<div></div></div>';
+        var div_card_content_media_end = '';
+        var div_card_content_end = '';
         var div_card_end = '</div>';
         var div_head_end = '</div>';
 

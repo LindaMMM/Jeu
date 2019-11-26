@@ -8,7 +8,9 @@
 
 function accueil() {
     if (isset($_SESSION["ssoid"]) && $_SESSION["iduser"]) {
+        
         require('./src/views/indexView.php');
+        
     } else {
         require('./src/views/loginView.php');
     }

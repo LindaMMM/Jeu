@@ -64,6 +64,7 @@ $(document).ready(function (e) {
 //                $('#res_jouer').html(connection);
                     if (code > 0)
                     {
+                        $('#present_gif').attr("src", "src/public/img/present-gain.gif");
                         html = '<div class="notification is-info">\n\
                             ' + connection + '\n\
                             </span>\n\
@@ -71,15 +72,16 @@ $(document).ready(function (e) {
                         $('#res_jouer').html(html);
                     } else
                     {
+                        $('#present_gif').attr("src", "src/public/img/present-perte.gif");
                         html = '<div class="notification is-danger">\n\
                             ' + msg + '\n\
                             </span>\n\
                         </div>';
-                        $('#err_jouer').html(html);
+//                        $('#err_jouer').html(html);
                     }
                 }
             })
-        }, 2000);
+        }, 4000);
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
 

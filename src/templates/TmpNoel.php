@@ -127,7 +127,6 @@ error_log("Grosse bourde !", 0);
                             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                             el.classList.toggle('is-active');
                             $target.classList.toggle('is-active');
-                            $('.to-hide').hide();
 
                         });
                     });

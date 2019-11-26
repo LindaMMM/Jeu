@@ -101,7 +101,7 @@ progress{
 
 
 
-    
+
 
 
 
@@ -134,17 +134,43 @@ progress{
 }
 
 @keyframes fall {
-    
+
     100% {
         transform: translateY(0);
     }
-    
+
 }
 
 .pageloader{
     background-color:#48C774;
 }
 
+.portrait {
+    height: 128px;
+    width: 128px;
+}
+
+@media screen and (max-width: 860px) {
+ 
+    .portrait {
+        height: 64px;
+        width: 64px;
+    }
+    
+}
+
+
+@media screen and (max-width: 640px) {
+    .to-hide {
+        display:none!important;
+    }
+
+    .portrait {
+        height: 48px;
+        width: 48px;
+    }
+
+}
 
 
 
