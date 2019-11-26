@@ -65,7 +65,7 @@ class Jeu implements JsonSerializable {
             if (!$this->isExistLogin($userid)) {
                 $this->createJeu($userid);
             }
-//            $queryDay = $this->buildQueryDay();
+            $queryDay = $this->buildQueryDay();
             $query = "SELECT idjeuNoel, $queryDay `user_app_iduser_app`   FROM `jeunoel` where user_app_iduser_app=?";
 
             $result = $this->mydb->fetchAll($query, $userid);

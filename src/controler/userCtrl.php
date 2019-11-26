@@ -33,7 +33,6 @@ class UserCtrl {
 	
 	public static function Jouer($idUser)
     {
-		
         $bd= new Database(DB_CSE);
 		$Jeu= new Jouer($bd);
 		$Jeu->Lancer($idUser);
@@ -56,7 +55,6 @@ class UserCtrl {
 
 	public static function GetCountCadeau()
     {
-		echo("compt \n");
         $bd= new Database(DB_CSE);
 		$Cadeau= new Cadeau($bd);
 		return $Cadeau->getCount();

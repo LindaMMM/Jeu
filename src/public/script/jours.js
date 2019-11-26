@@ -44,7 +44,7 @@ $(document).ready(function (e) {
         console.log("jouer");
         var code = 0;
         var msg = 'No response';
-        var connection = {};
+        var lot = {};
 
 
         event.preventDefault();  // Empêcher le rechargement de la page.
@@ -54,7 +54,9 @@ $(document).ready(function (e) {
                 success: function (response) {
                     code = response.code;
                     msg = response.message;
-                    connection = response.value;
+                    if (code > 0) {
+                        lot = JSON.parse(response.value);
+                    }
                 },
                 error: function (response) {
                     code = response.code;
@@ -64,11 +66,23 @@ $(document).ready(function (e) {
 //                $('#res_jouer').html(connection);
                     if (code > 0)
                     {
-                        html = '<div class="notification is-info">\n\
-                            ' + connection + '\n\
+                        if (lot!=undefined && lot.estGagne===true)
+                        {
+                            html = '<div class="notification is-info">\n\
+                            ' + lot.libGain + '\n\
                             </span>\n\
-                        </div>';
-                        $('#res_jouer').html(html);
+                            </div>';
+                             $('#res_jouer').html(html);
+                            
+                        }
+                        else{
+                            html = '<div class="notification is-danger">\n\
+                            ' + lot.libGain +'\n\
+                            </span>\n\
+                            </div>';
+                             $('#res_jouer').html(html);
+                        }
+
                     } else
                     {
                         html = '<div class="notification is-danger">\n\

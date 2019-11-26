@@ -47,10 +47,15 @@ if($formulaire_envoyé)
 
     $count = UserCtrl::GetCountCadeau();
     echo (json_encode($count));
-
-   /* $jeu = UserCtrl::Jouer(7);
+    try{
+        echo "ll";
+    $jeu = UserCtrl::Jouer(7);
     echo (json_encode($jeu));
-*/
+    }
+    catch (Exception $e) {
+        //$respond->code= -5;
+       echo $e->get_message();
+      }
 }
 ?>
     <section class="hero has-background-grey is-fullheight ">

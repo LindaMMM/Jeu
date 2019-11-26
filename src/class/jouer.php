@@ -14,9 +14,13 @@
     protected $libGain;
     protected $estGagne=false;
 	protected $valid=false;
- 
+    protected $today,$day;
+    // protected $datetoday = date("Y-m-d");
+   //  protected $day=date("d");
     public function __construct($dbb){
         $this->setMydb($dbb);
+        $this->today = date("Y-m-d");
+        $this->day=date("d");
     }
   
   function __call($m,$p) {
@@ -44,14 +48,17 @@
 	public function Lancer($userid)
     {
         try 
-        {
-            
+        {  
             $this->idUser = $userid;
-            $this->libGain = "Perdu";
+            $this->libGain = "Vous n'avez pas gagné aujourd'hui";
             $this->estGagne = false;
             // check la date
-            $this->checkDateJour();
+             //$this->checkDateJour();
             
+            //
+            $this->day=2;
+            $this->today=date('2019-12-02');
+           
             if($this->mydb->beginTransaction()){
                 try 
                 {
@@ -77,7 +84,6 @@
                 }  
                 catch(Exception $e)
                 {
-                    
                     $this->mydb->rollBack();
                     // echo $e->getMessage();
                     throw new Exception("Error jouer.Lancer transaction"); 
@@ -105,12 +111,11 @@
     // lecture du tirage
     private function readTirage($userid){
        
-        $today=date("Y-m-d");
         $query = "SELECT Cadeau_idCadeau as IDCADEAU FROM tirage where datetir = ? and user_app_iduser_app = ?";
-        $result = $this->mydb->fetchAll($query,$today,$userid);
+        $result = $this->mydb->fetchAll($query,$this->today,$userid);
         if ($result && count($result)> 0 )
         {
-            $this->idCadeau= $result[0]->count;
+            $this->idCadeau= $result[0]->IDCADEAU;
             $this->estGagne= true;
             return true ;
         }
@@ -119,10 +124,8 @@
 
     private function UpdateCadeau($userid)
     {
-        
-        $today=date("Y-m-d");
         $query = "UPDATE `cadeau` SET `dateGain` = ?, `user_app_iduser_app` = ? WHERE `idCadeau` = ?";
-        $count = $this->mydb->execReturnBool($query,$today,$userid, $this->idCadeau);
+        $count = $this->mydb->execReturnBool($query,$this->today,$userid, $this->idCadeau);
         if ($count == 1)
         {
             return true ;
@@ -135,10 +138,11 @@
     {
         
         $query = "select Description from `cadeau`  WHERE `idCadeau` = ?";
-        $count = $this->mydb->fetchAll($query, $this->idCadeau);
+        $result = $this->mydb->fetchAll($query, $this->idCadeau);
         if ($result && count($result)> 0 )
         {
-            $this->libGain= $result[0]->Description;
+            
+            $this->libGain= 'Vous avez gagné : '.$result[0]->Description;
             return true ;
         }
         $this->valid =false;
@@ -146,9 +150,7 @@
     }
     private function UpdateJeu($userid)
     {
-        
-        $day=date("d");
-        $libday="`jour".$day."`";
+        $libday="`jour".$this->day."`";
         $valday='P';
         if($this->estGagne)
         {
