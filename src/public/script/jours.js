@@ -6,6 +6,7 @@ $(document).ready(function (e) {
     var code = 0;
     var msg = 'No response';
     var connection = {};
+    var compte = {};
 
 
     $.ajax({dataType: "JSON",
@@ -38,6 +39,31 @@ $(document).ready(function (e) {
     });
 
 
+    $.ajax({dataType: "JSON",
+    type: "GET", url: "./src/ajax/cadeauprogression.php",
+    success: function (response) {
+        code = response.code;
+        msg = response.message;
+        if(code>0){
+            compte = JSON.parse(response.value);
+        }
+    },
+    error: function (response) {
+        code = response.code;
+        msg = response.message;
+    },
+    complete: function () {
+        if (code > 0 && compte!=undefined)
+        {
+            console.log(compte.nbCadeau);
+            console.log(compte.nbCadeauGagner);
+        } else
+        {
+
+            
+        }
+    }
+});
 
 
     $("body").on('click', '#is-the-one', (function (e) {
@@ -96,7 +122,6 @@ $(document).ready(function (e) {
         }, 2000);
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
-
     }));
 
 });
