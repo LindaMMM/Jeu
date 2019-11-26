@@ -59,4 +59,11 @@ class UserCtrl {
 		$Cadeau= new Cadeau($bd);
 		return $Cadeau->getCount();
 	}
+
+	public static function CalculTirage($datecal)
+	{
+		$bd= new Database(DB_CSE);
+		$Cadeau= new Cadeau($bd);
+		return $Cadeau->calculTirage($datecal);
+	}
 }

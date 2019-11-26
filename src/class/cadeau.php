@@ -102,4 +102,12 @@
         }  
         return null;
     }
+
+    public function calculTirage($datecal){
+       
+       $query = "CALL prTirageJour(?)";
+       
+       $result = $this->mydb->fetchAll($query,$datecal );
+     return $result; 
+    }
 }
