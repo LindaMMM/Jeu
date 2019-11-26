@@ -8,7 +8,7 @@ $(document).ready(function (e) {
 
 
     $.ajax({dataType: "JSON",
-        type: "GET", url: "./Src/ajax/gagant.php",
+        type: "GET", url: "./src/ajax/gagant.php",
         success: function (response) {
             code = response.code;
             msg = response.message;

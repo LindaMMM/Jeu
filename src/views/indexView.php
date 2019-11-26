@@ -11,7 +11,7 @@
             <article class="media">
                 <div class="media-left">
                     <figure class="image is-128x128">
-                        <img src="Src/public/img/breiznoel-info.png" alt="Image">
+                        <img src="src/public/img/breiznoel-info.png" alt="Image">
                     </figure>
                 </div>
                 <div class="media-content">
@@ -43,7 +43,7 @@
         <div class="modal-background"></div>
         <div class="modal-content">
             <p class="image is-4by3">
-                <img src="Src/public/img/present.gif" alt="">
+                <img src="src/public/img/present.gif" alt="">
                 <div id="res_jouer"></div>
                 <div id="err_jouer"></div>
             </p>

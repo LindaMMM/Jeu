@@ -1,6 +1,6 @@
 <?php
-require_once "Src/class/config.php";
-require('Src/controller/accueil.php');
+require_once "src/class/config.php";
+require('src/controller/accueil.php');
 
 if (isset($_GET['page'])) {
     if($_GET['page'] == 'accueil'){

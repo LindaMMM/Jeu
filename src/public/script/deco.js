@@ -2,14 +2,10 @@ $(document).ready(function (e) {
 
 
 
-    $("#idform").on('submit', (function (e) {
-        var code = 0;
-        var msg = 'No response';
-        login = $('input[name=ssoid]').val();
-        pwd = $('input[name=pwd]').val();
-        event.preventDefault(); // Empêcher le rechargement de la page.
+    $("#deco").on('click', (function (e) {
+        
         $.ajax({dataType: "JSON",
-            type: "POST", url: "./Src/ajax/login.php", data: {'ssoid': login, 'pwd': pwd},
+            type: "GET", url: "./src/ajax/deco.php",
             success: function (response) {
                 code = response.code;
                 msg = response.message;
@@ -22,7 +18,7 @@ $(document).ready(function (e) {
             complete: function () {
                 if (code > 0)
                 {
-                    window.location = './index.php?page=accueil';
+                    window.location = './index.php';
                 } else
                 {
                     html = '<div class="notification is-danger">\n\

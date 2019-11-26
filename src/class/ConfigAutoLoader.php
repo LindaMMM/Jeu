@@ -16,12 +16,12 @@ class ConfigAutoLoader {
 	/** Maps classnames to files containing the class. */
 	private static $classes = array(
 	
-		'Database' => 'Src/class/database.php',
-		'User' => 'Src/class/user.php',
-		'Jeu' => 'Src/class/jeu.php',
-		'Jouer' => 'Src/class/jouer.php',
-		'Cadeau' => 'Src/class/cadeau.php',
-		'UserCtrl' => 'Src/controler/userCtrl.php',
+		'Database' => 'src/class/database.php',
+		'User' => 'src/class/user.php',
+		'Jeu' => 'src/class/jeu.php',
+		'Jouer' => 'src/class/jouer.php',
+		'Cadeau' => 'src/class/cadeau.php',
+		'UserCtrl' => 'src/controler/userCtrl.php',
 	);
 	
 	/**
