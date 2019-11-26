@@ -28,10 +28,10 @@ html += '<div class="column is-two-third">\n\
 		}
         html +=    '<figure class="image">';
 		if(old){
-			html += '<img src="Src/public/img/fond-end.png" alt="Image">';
+			html += '<img src="src/public/img/fond-end.png" alt="Image">';
 		}else if(obj[k] != 'N'){
-			html += '<img src="Src/public/img/fond-curr.png" alt="Image">';
-		}else{ html += '<img src="Src/public/img/fond-fut.png" alt="Image">'; }
+			html += '<img src="src/public/img/fond-curr.png" alt="Image">';
+		}else{ html += '<img src="src/public/img/fond-fut.png" alt="Image">'; }
         html += '</figure>\n\
             </div>';
         if(!old){
@@ -44,9 +44,9 @@ html += '<div class="column is-two-third">\n\
         html += '"><div class="media">\n\
             <div class="media-left"><figure class="image is-96x96">';
         if (obj[k] == 'N') {
-            html += '<img src="Src/public/img/lutin.png" alt="Image">';
+            html += '<img src="src/public/img/lutin.png" alt="Image">';
         } else {
-            html += '<img src="Src/public/img/breiznoel.png" alt="Image">';
+            html += '<img src="src/public/img/breiznoel.png" alt="Image">';
         }
         html += '</figure>\n\
             </div>';

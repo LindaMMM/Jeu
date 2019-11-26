@@ -9,13 +9,13 @@ and open the template in the editor.
     Author     : Tony
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Mountains+of+Christmas|Concert+One&display=swap");
-@import url(../Src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css);
+@import url(../src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css);
 @font-face {
   font-family: "BigJohnPRO-Bold";
-  src: url("../Src/public/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-bold-webfont.woff") format("woff"); }
+  src: url("../src/public/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"), url("../src/public/font/bigjohnpro-bold-webfont.woff") format("woff"); }
 @font-face {
   font-family: "BigJohnPRO-Regular";
-  src: url("../Src/public/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"), url("../Src/public/font/bigjohnpro-regular-webfont.woff") format("woff"); }
+  src: url("../src/public/fonts/bigjohnpro-regular-webfont.woff2") format("woff2"), url("../src/public/font/bigjohnpro-regular-webfont.woff") format("woff"); }
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -6967,14 +6967,14 @@ a.tag:hover {
 
 progress {
   background-color: #48c774;
-  background-image: url("../Src/public/img/gifts.png");
+  background-image: url("../src/public/img/gifts.png");
   background-repeat: repeat-x;
   background-size: 150px;
   height: 50px !important; }
 
 .hero {
-  background-image: url("../Src/public/img/gif-noel-2016-19.gif");
-  background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)), rgba(0, 0, 0, 0.55) url("../Src/public/img/gif-noel-2016-19.gif") no-repeat;
+  background-image: url("../src/public/img/gif-noel-2016-19.gif");
+  background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)), rgba(0, 0, 0, 0.55) url("../src/public/img/gif-noel-2016-19.gif") no-repeat;
   background-attachment: scroll, scroll;
   background-size: auto, auto;
   background-attachment: fixed;

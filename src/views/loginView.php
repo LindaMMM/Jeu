@@ -8,7 +8,7 @@
         <p class="subtitle has-text-white">Votre calendrier de l'avent - Cogelec</p>
         <div class="box">
             <figure class="avatar">
-                <img src="Src/public/img/pere_noel.jpg">
+                <img src="src/public/img/pere_noel.jpg">
             </figure>
             <div id="err"></div>
             <form id="idform">

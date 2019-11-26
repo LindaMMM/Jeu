@@ -9,7 +9,7 @@ $(document).ready(function (e) {
 
 
     $.ajax({dataType: "JSON",
-        type: "GET", url: "./Src/ajax/jours.php",
+        type: "GET", url: "./src/ajax/jours.php",
         success: function (response) {
             code = response.code;
             msg = response.message;
@@ -50,7 +50,7 @@ $(document).ready(function (e) {
         event.preventDefault();  // Empêcher le rechargement de la page.
         setTimeout(function () {
             $.ajax({dataType: "JSON",
-                type: "POST", url: "./Src/ajax/loterie.php",
+                type: "POST", url: "./src/ajax/loterie.php",
                 success: function (response) {
                     code = response.code;
                     msg = response.message;

@@ -125,12 +125,12 @@ error_log("Grosse bourde !", 0);
 
     <!-- Scripts -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="Src/public/script/modernizr/modernizr-3.7.1.min.js"></script>
+    <script src="src/public/script/modernizr/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../public/script/jquery/jquery-3.4.1.min.js"><\/script>')</script>
-    <script src="Src/public/script/plugins.js"></script>
-    <script src="Src/public/script/main.js"></script>
-    <script src="Src/public/script/login.js"></script>
+    <script src="src/public/script/plugins.js"></script>
+    <script src="src/public/script/main.js"></script>
+    <script src="src/public/script/login.js"></script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
         window.ga = function () {
