@@ -1,83 +1,154 @@
 
 function GenerateDiv(json, type = 'jours') {
-    obj = jQuery.parseJSON(json);
-    first = '<div class="row columns">';
-    last = '</div>';
-    html = first;
-    old = true;
+    var obj = jQuery.parseJSON(json);
+
+    var click = '';
+    var id = '';
+    var back = '';
+    var fond_url = '';
+    var perso_url = '';
+    var title = '';
+    var subtitle = '';
+    var perso = '';
+    var text = '';
+    var k = 0;
+    var first = '<div class="row columns">';
+    var last = '</div>';
+    var html = first;
+
+    var choosen = false;
     for (var k in obj) {
 
-        if (old && obj[k] != 'N') {
-            old = false;;
-        }
-        
-html += '<div class="column is-two-third">\n\
-            <div class="card large' ;if (obj[k] != 'N') {
-            html += ' is-click';
-        }
-        html += '"';
-        if (obj[k] != 'N') {
-            html += 'id= "is-the-one"';
-        }
-        html += '><div class="card-image">';
-        if(!old){
-		html += '<div class="title day-number">\n\
-            JOUR<br/>';
-        html += '<span class="day_detail"> ' + k +'</span>';
-        html += '</div>';
-		}
-        html +=    '<figure class="image">';
-		if(old){
-			html += '<img src="src/public/img/fond-end.png" alt="Image">';
-		}else if(obj[k] != 'N'){
-			html += '<img src="src/public/img/fond-curr.png" alt="Image">';
-		}else{ html += '<img src="src/public/img/fond-fut.png" alt="Image">'; }
-        html += '</figure>\n\
-            </div>';
-        if(!old){
-        html += '<div class="card-content';
-        if (obj[k] != 'N') {
-            $('#date').html(k+'/12/2019');
-            html += ' has-background-warning';
-        }
-        
-        html += '"><div class="media">\n\
-            <div class="media-left"><figure class="image is-96x96">';
-        if (obj[k] == 'N') {
-            html += '<img src="src/public/img/lutin.png" alt="Image">';
+        var div = '';
+        if (!choosen && obj[k] != 'E') {
+            click = ' is-click';
+            id = 'is-the-one';
+            fond_url = 'src/public/img/fond-curr.png';
+            back = ' has-background-warning';
+            perso_url = 'src/public/img/breiznoel.png';
+            title = 'On t\'attend !';
+            subtitle = 'ohoho ! Ouvre !';
+            perso = 'Le père breizh noel';
+            text = 'Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.<br/>Ouvre vite pour savoir !';
+            $('#date').html(k + '/12/2019');
+            choosen = true;
+        } else if (choosen && obj[k] != 'E') {
+            console.log('second');
+            fond_url = 'src/public/img/fond-fut.png';
+            perso_url = 'src/public/img/lutin.png';
+            title = 'Tu attends !';
+            subtitle = 'Déso... déso ';
+            perso = 'Le lutin du malheur';
+            text = 'Bon... écoute. On n\'est pas prêt...<br/>T\'as ton éléphant Jumbo pour t\'aider à décompresser et patienter ?';
         } else {
-            html += '<img src="src/public/img/breiznoel.png" alt="Image">';
+            fond_url = 'src/public/img/fond-end.png';
+            
         }
-        html += '</figure>\n\
-            </div>';
-        
-        if (obj[k] == 'N') {
-            html += '<div class="media-content">\n\
-                <p class="title is-4 no-padding">Tu attends !</p>\n\
-                <p><span class="title is-6"><a href="http:///#">Déso... déso </a></span></p>\n\
-                <p class="subtitle is-6">Le lutin du malheur</p>\n\
-                </div></div><div class="content">Bon... écoute. On n\'est pas prêt...<br/>T\'as ton éléphant Jumbo pour t\'aider à décompresser et patienter ?\n\
-                <div class="background-icon"><span class="icon-facebook"></span></div></div>';
+
+        console.log(fond_url);
+        divsCard = new DivsCards(click, id, back, fond_url, perso_url, title, subtitle, perso, text, k);
+
+
+        if (choosen) {
+            div = divsCard.getComplet();
         } else {
-            html += '<div class="media-content">\n\
-                <p class="title is-4 no-padding">On t\'attend !</p>\n\
-                <p><span class="title is-6"><a href="http:///#">ohoho ! Ouvre !</a></span></p>\n\
-                <p class="subtitle is-6">Le père breizh noel</p>\n\
-                </div></div><div class="content">Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.<br/>Ouvre vite pour savoir !\n\
-                <div class="background-icon"><span class="icon-facebook"></span></div></div>';
+            div = divsCard.getPartial();
         }
-        html += '</div>';
-        }
-        html += '</div></div>';
-        
-        
-        
+
+
+
+        html += div;
+
+
+
         if (k % 3 == 0) {
             html += last;
             html += first;
         }
+        
     }
     html += last;
     $('#res_jours').html(html);
 
 }
+
+
+class DivsCards {
+
+    constructor(click = '', id = '', back = '', fond_url ='', perso_url = '', title = '', subtitle = '', perso = '', text = '', k = '') {
+        this.click = click;
+        this.id = id;
+        this.back = back;
+        this.fond_url = fond_url;
+        console.log(this.fond_url);
+        this.perso_url = perso_url;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.perso = perso;
+        this.text = text;
+        this.k = k;
+        this.divComplet = '';
+        this.divPartial = '';
+        this.generate();
+    }
+
+    generate() {
+
+        var div_head_start = '<div class="column is-two-third">';
+        var div_card_start = '<div class="card large ' + this.click + '" id="' + this.id + '">';
+        var div_card_image_start = '<div class="card-image">';
+        var div_card_day = '<div class="title day-number">\n\
+                            JOUR<br/>\n\
+                            <span class="day_detail"> ' + this.k + '</span>\n\
+                          </div>';
+        var div_card_figure = '<figure class="image"><img src="' + this.fond_url + '" alt="' + this.title + '"></figure>';
+        var div_card_image_end = '</div>';
+        var div_card_content_start = '<div class="card-content ' + this.back + '">';
+        var div_card_content_media_start = '<div class="media">';
+        var div_card_content_media_img = '<div class="media-left"><figure class="image is-96x96"><img src="' + this.perso_url + '" alt="' + this.perso + '"></figure></div>';
+        var div_card_content_media_content = '<div class="media-content">\n\
+                                    <p class="title is-4 no-padding">' + this.title + '</p>\n\
+                                    <span class="title is-6">' + this.subtitle + '</a></span>\n\
+                                    <p class="subtitle is-6">' + this.perso + '</p>\n\
+                                    <div class="content">' + this.text + '</div>\n\
+                                </div>';
+        var div_card_content_media_end = '</div>';
+        var div_card_content_end = '<div>';
+        var div_card_end = '</div>';
+        var div_head_end = '</div>';
+
+        this.divComplet =
+                div_head_start +
+                div_card_start +
+                div_card_image_start +
+                div_card_day +
+                div_card_figure +
+                div_card_image_end +
+                div_card_content_start +
+                div_card_content_media_start +
+                div_card_content_media_img +
+                div_card_content_media_content +
+                div_card_content_media_end +
+                div_card_content_end +
+                div_card_end +
+                div_head_end;
+        this.divPartial = div_head_start +
+                div_card_start +
+                div_card_image_start +
+                div_card_day +
+                div_card_figure +
+                div_card_image_end +
+                div_card_end +
+                div_head_end;
+    }
+
+    getComplet() {
+        return this.divComplet;
+    }
+
+    getPartial() {
+        return this.divPartial;
+    }
+
+}
+
