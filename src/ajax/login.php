@@ -18,7 +18,7 @@ try {
 
     if (!isset($login)) {
         $respond->code=-1;
-        $respond->message="c'est vide.".var_dump($_POST);
+        $respond->message="Le site a rencontré un problème";
         echo json_encode( $respond );
         return;
     }
@@ -36,12 +36,12 @@ try {
     {
         /* le mot de passe n'est pas valide*/
         $respond->code=-2;
-        $respond->message="Login n'est pas valide";
+        $respond->message="Votre Login ou mot de passe ne sont pas correctes";
     }
 } 
  catch (Exception $e) {
   $respond->code= -5;
-  $respond->message= $e->getMessage();
+  $respond->message= "Le site a rencontré un problème";
 }
 
 $myResponsJSON = json_encode($respond);

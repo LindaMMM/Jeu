@@ -1,6 +1,5 @@
 <?php
 header("Pragma:no-cache");
-error_log("Grosse bourde !", 0);
 ?>
 <!doctype html>
 <html class="no-js" lang="fr">

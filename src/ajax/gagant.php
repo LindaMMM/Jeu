@@ -42,7 +42,7 @@ try {
 } 
  catch (Exception $e) {
   $respond->code= -5;
-  $respond->message= $e->getMessage();
+  $respond->message= "Le site a rencontré un problème.";
 }
 
 $myResponsJSON = json_encode($respond);

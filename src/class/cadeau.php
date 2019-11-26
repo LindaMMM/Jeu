@@ -53,8 +53,8 @@
         }  
         catch(Exception $e)
         {
-            echo $e->getMessage();
-            
+            // echo $e->getMessage();
+            throw new Exception("Error Cadeau.GetAll");
         }
         
         return null;
@@ -76,8 +76,7 @@
         }  
         catch(Exception $e)
         {
-            echo $e->getMessage();
-            
+            throw new Exception("Error Cadeau.getAllGagner"); 
         }
         
         return null;
@@ -88,7 +87,6 @@
     ///-----------------------------
     public function getCount()
     {
-        echo("compt \n");
         try 
         {
             $query="SELECT count(idCadeau) as nbCadeau, count(distinct user_app_iduser_app, dateGain) as nbCadeauGagner  FROM cadeau";
@@ -100,8 +98,8 @@
         }  
         catch(Exception $e)
         {
-           echo $e->getMessage();   
-        }   
+           throw new Exception("Error Cadeau.getCount"); 
+        }  
         return null;
     }
 }

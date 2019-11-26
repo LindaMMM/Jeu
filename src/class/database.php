@@ -64,7 +64,6 @@ class MyPDOStatement extends PDOStatement {
             return $statement->fetchAll(PDO::FETCH_OBJ);
          
         } catch (Exception $ex) {
-            echo($ex->getMessage());
             error_log($ex->getMessage());
             throw new Exception("Error SQL :fetchAll ");
         }
@@ -79,7 +78,6 @@ class MyPDOStatement extends PDOStatement {
             
          
         } catch (Exception $ex) {
-            echo($ex->getMessage());
             error_log($ex->getMessage());
             throw new Exception("Error SQL :execProc ");
         }
@@ -97,7 +95,6 @@ class MyPDOStatement extends PDOStatement {
         $statement = $this->connection->prepare($sql);        
         return $statement->execute($args);
         } catch (Exception $ex) {
-            echo($ex->getMessage());
             error_log($ex->getMessage());
             throw new Exception("Error SQL :execReturnBool ");
         }
