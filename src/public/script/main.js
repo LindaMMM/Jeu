@@ -35,6 +35,7 @@ function GenerateDiv(json, type = 'jours') {
             $('#date').html(k + '/12/2019');
             choosen = true;
         } else if (choosen && obj[k] != 'E') {
+            console.log('second');
             fond_url = 'src/public/img/fond-fut.png';
             perso_url = 'src/public/img/lutin.png';
             title = 'Tu attends !';
@@ -46,6 +47,7 @@ function GenerateDiv(json, type = 'jours') {
 
         }
 
+        console.log(fond_url);
         divsCard = new DivsCards(click, id, back, fond_url, perso_url, title, subtitle, perso, text, k);
 
 
@@ -80,6 +82,7 @@ class DivsCards {
         this.id = id;
         this.back = back;
         this.fond_url = fond_url;
+        console.log(this.fond_url);
         this.perso_url = perso_url;
         this.title = title;
         this.subtitle = subtitle;
