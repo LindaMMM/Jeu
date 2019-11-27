@@ -19,7 +19,7 @@ Drop temporary table if exists $userSelec;
 create temporary Table $userSelec(userid INT);
 insert into $userSelec (select iduser_app from user_app u 
 inner join user_app_has_role ur on ur.user_app_iduser_app = u.iduser_app 
-left join Cadeau c on c.user_app_iduser_app = u.iduser_app
+left join cadeau c on c.user_app_iduser_app = u.iduser_app
 where u.del is null and ur.role_idRole=3 
 ORDER BY RAND()  
 LIMIT nbItem);
@@ -35,7 +35,7 @@ Drop temporary table if exists $userSelec;
 create temporary Table $userSelec(userid INT , somme INT);
 -- Recherche des personnes qui on joué sans cadeau
 insert into $userSelec (select j.user_app_iduser_app, 0 from jeunoel j 
-left join Cadeau c on c.user_app_iduser_app = j.user_app_iduser_app
+left join cadeau c on c.user_app_iduser_app = j.user_app_iduser_app
 ORDER BY RAND()  
 LIMIT nbItem);
 
@@ -86,12 +86,12 @@ BEGIN
   DECLARE iduserSel INTEGER DEFAULT 0;
   DECLARE countItem INTEGER DEFAULT 5;
   DECLARE idlot INTEGER DEFAULT 0;
-  DECLARE cursor_lot CURSOR FOR select idCadeau from Cadeau where Agagner<=param1 and user_app_iduser_app is null;
+  DECLARE cursor_lot CURSOR FOR select idCadeau from cadeau where Agagner<=param1 and user_app_iduser_app is null;
   DECLARE cursor_user CURSOR FOR select userid from $userSelec where userid is not null ;
   DECLARE CONTINUE HANDLER 
         FOR NOT FOUND SET finished = 1;
  
-   select count(idCadeau) into countItem  from Cadeau where Agagner<=param1 and user_app_iduser_app is null;
+   select count(idCadeau) into countItem  from cadeau where Agagner<=param1 and user_app_iduser_app is null;
   -- Test du jour 
   set dayCalcul = (select dayofmonth(param1));
   INSERT INTO messages(message,created_at)
