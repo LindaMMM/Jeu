@@ -33,7 +33,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `logindb`.`jeuNoel`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jeuNoel` (
+CREATE TABLE IF NOT EXISTS `jeunoel` (
   `idjeuNoel` INT NOT NULL AUTO_INCREMENT,
   `user_app_iduser_app` INT NOT NULL,
   `jour1` VARCHAR(1) NOT NULL DEFAULT 'N',
@@ -95,7 +95,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `logindb`.`Cadeau`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS`Cadeau` (
+CREATE TABLE IF NOT EXISTS`cadeau` (
   `idCadeau` INT NOT NULL AUTO_INCREMENT,
   `Description` VARCHAR(45) NULL,
   `Agagner` DATE NULL,
@@ -123,8 +123,8 @@ CREATE TABLE IF NOT EXISTS `tirage` (
   INDEX `fk_tirage_Cadeau1_idx` (`Cadeau_idCadeau` ASC) ,
   INDEX `fk_tirage_user_app1_idx` (`user_app_iduser_app` ASC) ,
   CONSTRAINT `fk_tirage_Cadeau1`
-    FOREIGN KEY (`Cadeau_idCadeau`)
-    REFERENCES `Cadeau` (`idCadeau`)
+    FOREIGN KEY (`cadeau_idCadeau`)
+    REFERENCES `cadeau` (`idCadeau`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_tirage_user_app1`
