@@ -55,8 +55,10 @@ $(document).ready(function (e) {
     complete: function () {
         if (code > 0 && compte!=undefined)
         {
-            console.log(compte.nbCadeau);
-            console.log(compte.nbCadeauGagner);
+            $('#rest_gift').html(compte.nbCadeau);
+            $('#progress-gift')
+                    .val(compte.nbCadeau)
+                    .attr('max', compte.nbCadeauGagner);
         } else
         {
 
@@ -118,7 +120,7 @@ $(document).ready(function (e) {
                             ' + msg + '\n\
                             </span>\n\
                         </div>';
-//                        $('#err_jouer').html(html);
+                        $('#err_jouer').html(html);
                     }
                 }
             })
