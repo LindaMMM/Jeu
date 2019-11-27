@@ -35,8 +35,8 @@
     </div>
 
 
-    <div class="subtitle">Progession des cadeaux / Il reste X cadeaux.</div>
-    <p class="title has-text-white"><progress class="progress" value="1" max="100">1er jour</progress></p>
+    <div class="subtitle">Progession des cadeaux / Il reste <span id="rest_gift"></span> cadeaux.</div>
+    <p class="title has-text-white"><progress class="progress" id="progress_gift" value="1" max="100">1er jour</progress></p>
 
     <div class="section" id="jours">
         <div id="res_jours"></div>
