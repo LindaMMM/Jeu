@@ -4,15 +4,16 @@ $(document).ready(function (e) {
     console.log("gagnant");
     var code = 0;
     var msg = 'No response';
-    var connection = {};
-
-
+    var gagants = [];
+   
     $.ajax({dataType: "JSON",
         type: "GET", url: "./src/ajax/gagant.php",
         success: function (response) {
             code = response.code;
             msg = response.message;
-            connection = response.value;
+            if (code > 0){
+                gagants = JSON.parse(response.value);
+            }
         },
         error: function (response) {
             code = response.code;
@@ -21,8 +22,13 @@ $(document).ready(function (e) {
         complete: function () {
             if (code > 0)
             {
-                html = connection;
-                $('#gagant').html(html);
+                var htmlStr = '';
+                $.each(gagants, function(k, v){
+                    htmlStr += v.libelle + ' ' + v.gagant + ' ' + v.dateGain + '<br />';
+               });
+               $("#gagant").html(htmlStr);
+               /* html = connection;
+                $('#gagant').html(html);*/
             } else
             {
 

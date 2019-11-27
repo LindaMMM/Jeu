@@ -12,6 +12,8 @@ require_once '../class/config.php';
     <script src="../public/script/jquery/jquery-3.3.1.js"></script>
     <script src="../public/script/login.js"></script>
     <script src="../public/script/jours.js"></script>
+    <script src="../public/script/gagnant.js"></script>
+   
 </head>
 <body> 
 <div>
@@ -44,6 +46,13 @@ require_once '../class/config.php';
 <button id="jouer" value="Jouer">JOUER</button>
 <div id="res_jouer">
 </div>
+
+<div>
+<h1>Jouer</h1>
+<button id="lstCadeau" value="Jouer">Cadeau</button>
+<div id="gagant">
+</div>
+
 <h1>Main page </h1>
 
 <a>Jouer</a>
