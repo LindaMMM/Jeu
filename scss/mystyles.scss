@@ -27,7 +27,7 @@ and open the template in the editor.
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$title-family : 'Concert+One', cursive;
+
 // Update Content progress bar
 $progress-value-background-color : hsl(357, 80%, 50%);
 
@@ -42,6 +42,9 @@ $progress-value-background-color : hsl(357, 80%, 50%);
 @import "../src/public/bulma-0.8.0/sass/grid/_all.sass";
 @import "../src/public/bulma-0.8.0/sass/layout/_all.sass";
 @import "../src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css";
+@import '../src/public/bulma-0.8.0/bulma-pricingtable/dist/css/bulma-pricingtable.min.css';
+
+$title-family : 'Nunito', cursive;
 
 progress{
     background-color:#48c774;
@@ -65,7 +68,6 @@ progress{
     box-shadow: inset 0 3px 6px
         rgba(0, 0, 0, 0.16), 0 3px 6px
         rgba(0, 0, 0, 0.23);
-    font-family: 'Poppins', sans-serif;
 
 }
 

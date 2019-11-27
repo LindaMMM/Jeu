@@ -93,7 +93,7 @@ header("Pragma:no-cache");
         <script>window.jQuery || document.write('<script src="../public/script/jquery/jquery-3.4.1.min.js"><\/script>')</script>
         <script src="src/public/script/plugins.js"></script>
         <script src="src/public/script/main.js"></script>
-        <script src="src/public/script/jours.js"></script>
+        <?= $js ?>
         <script src="src/public/script/deco.js"></script>
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
@@ -129,7 +129,7 @@ header("Pragma:no-cache");
 
                         });
                     });
-                    
+
                 }
             });
 
@@ -161,7 +161,6 @@ header("Pragma:no-cache");
                         console.log('fin');
                         $loading.removeClass('is-active');
                     });
-
 
 
         </script>

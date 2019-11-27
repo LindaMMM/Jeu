@@ -21,8 +21,7 @@ $(document).ready(function (e) {
         complete: function () {
             if (code > 0)
             {
-                html = connection;
-                $('#gagant').html(html);
+                GenerateDiv(connection, 'top');
             } else
             {
 

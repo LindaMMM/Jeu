@@ -7,7 +7,7 @@
     <div id="err"></div>
     <div class="notification stars has-background-success">
         <button class="delete"></button>
-        <div class="box">
+        <div class="box has-background-success">
             <article class="media">
                 <div class="media-left">
                     <figure class="image is-128x128">
@@ -34,9 +34,12 @@
         </div>
     </div>
 
-
-    <div class="subtitle">Progession des cadeaux / Il reste <span id="rest_gift"></span> cadeaux.</div>
-    <p class="title has-text-white"><progress class="progress" id="progress_gift" value="1" max="100">1er jour</progress></p>
+    <div class="section has-text-centered has-background-grey-lighter">
+        <div class="box">
+            <div class="subtitle is-1"> <span id="rest_gift"></span> <i class="fas fa-gift"></i></div>
+            <p class="title has-text-white"><progress class="progress" id="progress_gift">1er jour</progress></p>
+        </div>
+    </div>
 
     <div class="section" id="jours">
         <div id="res_jours"></div>
@@ -57,5 +60,5 @@
 
 
 <?php $content = ob_get_clean(); ?>
-
+<?php $js = '<script src="src/public/script/jours.js"></script>' ?>
 <?php require('./src/templates/TmpNoel.php'); ?>

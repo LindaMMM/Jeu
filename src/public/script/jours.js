@@ -46,6 +46,7 @@ $(document).ready(function (e) {
         msg = response.message;
         if(code>0){
             compte = JSON.parse(response.value);
+            
         }
     },
     error: function (response) {
@@ -55,10 +56,10 @@ $(document).ready(function (e) {
     complete: function () {
         if (code > 0 && compte!=undefined)
         {
-            $('#rest_gift').html(compte.nbCadeau);
-            $('#progress-gift')
-                    .val(compte.nbCadeau)
-                    .attr('max', compte.nbCadeauGagner);
+            $('#rest_gift').html(compte[0].nbCadeau - compte[0].nbCadeauGagner);
+            $('#progress_gift')
+                    .val(compte[0].nbCadeauGagner)
+                    .attr('max', compte[0].nbCadeau);
         } else
         {
 

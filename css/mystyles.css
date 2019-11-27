@@ -10,6 +10,7 @@ and open the template in the editor.
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Mountains+of+Christmas|Concert+One&display=swap");
 @import url(../src/public/bulma-0.8.0/bulma-pageloader-master/dist/css/bulma-pageloader.min.css);
+@import url(../src/public/bulma-0.8.0/bulma-pricingtable/dist/css/bulma-pricingtable.min.css);
 @font-face {
   font-family: "BigJohnPRO-Bold";
   src: url("../src/public/fonts/bigjohnpro-bold-webfont.woff2") format("woff2"), url("../src/public/font/bigjohnpro-bold-webfont.woff") format("woff"); }
@@ -4405,7 +4406,6 @@ a.tag:hover {
 
 .title {
   color: #363636;
-  font-family: "Concert+One", cursive;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
@@ -6980,8 +6980,7 @@ progress {
   background-attachment: fixed;
   background-size: cover;
   color: white;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  font-family: 'Poppins', sans-serif; }
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .item-bottom {
   align-items: start; }
