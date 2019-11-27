@@ -94,6 +94,7 @@ $(document).ready(function (e) {
                     {
                         if (lot!=undefined && lot.estGagne===true)
                         {
+                            $('#present_gif').attr("src", "src/public/img/present-gain.gif");
                             html = '<div class="notification is-info">\n\
                             ' + lot.libGain + '\n\
                             </span>\n\
@@ -102,6 +103,7 @@ $(document).ready(function (e) {
                             
                         }
                         else{
+                            $('#present_gif').attr("src", "src/public/img/present-perte.gif");
                             html = '<div class="notification is-danger">\n\
                             ' + lot.libGain +'\n\
                             </span>\n\
