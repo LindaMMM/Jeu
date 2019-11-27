@@ -111,7 +111,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `logindb`.`Cadeau` (
   `idCadeau` INT NOT NULL AUTO_INCREMENT,
-  `Description` VARCHAR(45) NULL,
+  `Description` VARCHAR(100) NULL,
   `Agagner` DATE NULL,
   `dateGain` DATE NULL,
   `user_app_iduser_app` INT NULL,

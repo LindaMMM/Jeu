@@ -22,6 +22,7 @@ $(document).ready(function (e) {
         complete: function () {
             if (code > 0)
             {
+<<<<<<< HEAD
                 var htmlStr = '';
                 $.each(gagants, function(k, v){
                     htmlStr += v.libelle + ' ' + v.gagant + ' ' + v.dateGain + '<br />';
@@ -29,6 +30,9 @@ $(document).ready(function (e) {
                $("#gagant").html(htmlStr);
                /* html = connection;
                 $('#gagant').html(html);*/
+=======
+                GenerateDiv(connection, 'top');
+>>>>>>> refs/heads/feature/v1.0-front
             } else
             {
 
