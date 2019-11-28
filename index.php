@@ -1,7 +1,7 @@
 <?php
 
-require_once "src/class/config.php";
-require('src/controller/accueil.php');
+require_once "./src/class/config.php";
+require('./src/controller/accueil.php');
 date_default_timezone_set('Europe/Paris');
 
 $dateSrc = '2019-11-30';
@@ -25,5 +25,5 @@ if ($date1 < $date2) {
         login();
     }
 } else {
-    require 'attente.html';
+    require './attente.html';
 }
