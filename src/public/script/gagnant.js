@@ -12,7 +12,8 @@ $(document).ready(function (e) {
             code = response.code;
             msg = response.message;
             if (code > 0){
-                gagants = JSON.parse(response.value);
+                gagants = response.value;
+                // gagants = JSON.parse(response.value);
             }
         },
         error: function (response) {
@@ -22,17 +23,7 @@ $(document).ready(function (e) {
         complete: function () {
             if (code > 0)
             {
-<<<<<<< HEAD
-                var htmlStr = '';
-                $.each(gagants, function(k, v){
-                    htmlStr += v.libelle + ' ' + v.gagant + ' ' + v.dateGain + '<br />';
-               });
-               $("#gagant").html(htmlStr);
-               /* html = connection;
-                $('#gagant').html(html);*/
-=======
-                GenerateDiv(connection, 'top');
->>>>>>> refs/heads/feature/v1.0-front
+                GenerateDiv(gagants, 'top');
             } else
             {
 
