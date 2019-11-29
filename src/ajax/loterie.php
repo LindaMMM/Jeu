@@ -19,7 +19,7 @@ try {
     if (!isset($idUser)) {
         $respond->code=-1;
         $respond->message="Pas de connexion";
-        echo json_encode( $respond );
+        echo json_encode( $respond, JSON_INVALID_UTF8_IGNORE );
         return;
     }
     
@@ -28,7 +28,7 @@ try {
 	if ($jeu->isValid()){
 		 $respond->code=1;
          $respond->message="bien jouer";
-         $respond->value=json_encode($jeu);
+         $respond->value=json_encode($jeu, JSON_INVALID_UTF8_IGNORE);
         
 	}
     else

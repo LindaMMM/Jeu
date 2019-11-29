@@ -110,9 +110,8 @@
 
     // lecture du tirage
     private function readTirage($userid){
-       
         $query = "SELECT Cadeau_idCadeau as IDCADEAU FROM tirage where datetir = ? and user_app_iduser_app = ?";
-        $result = $this->mydb->fetchAll($query,$this->today,$userid);
+        $result = $this->mydb->fetchAll($query, $this->today, $userid);
         if ($result && count($result)> 0 )
         {
             $this->idCadeau= $result[0]->IDCADEAU;
@@ -125,7 +124,7 @@
     private function UpdateCadeau($userid)
     {
         $query = "UPDATE `cadeau` SET `dateGain` = ?, `user_app_iduser_app` = ? WHERE `idCadeau` = ?";
-        $count = $this->mydb->execReturnBool($query,$this->today,$userid, $this->idCadeau);
+        $count = $this->mydb->execReturnBool($query, $this->today, $userid, $this->idCadeau);
         if ($count == 1)
         {
             return true ;
@@ -135,8 +134,7 @@
     }
 
     private function UpdatelibCadeau()
-    {
-        
+    {  
         $query = "select Description from `cadeau`  WHERE `idCadeau` = ?";
         $result = $this->mydb->fetchAll($query, $this->idCadeau);
         if ($result && count($result)> 0 )
