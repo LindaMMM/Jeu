@@ -9,14 +9,17 @@
 include("../class/config.php");
     
 try {
-    $dateCal = date('Y-m-d');
-    $dateCal = date('2019-12-02');
+    $dateCal = new DateTime();
+    // $dateCal = date('Y-m-d');
+    // $dateCal = date('2019-12-02');
+    error_log("lancement du calcul".var_dump($dateCal), 0);
     $output = UserCtrl::CalculTirage($dateCal);
-    Echo  var_dump($output);
+    error_log(var_dump($output));
     	 
 } 
  catch (Exception $e) {
   $respond->code= -5;
+  error_log(var_dump($e.getMessage()));
   $respond->message= "Le site a rencontré un problème.";
 }
 

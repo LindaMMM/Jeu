@@ -53,11 +53,11 @@
             $this->libGain = "Vous n'avez pas gagné aujourd'hui";
             $this->estGagne = false;
             // check la date
-             //$this->checkDateJour();
+            $this->checkDateJour();
             
             //
-            $this->day=2;
-            $this->today=date('2019-12-02');
+            // $this->day=2;
+            // $this->today=date('2019-12-02');
            
             if($this->mydb->beginTransaction()){
                 try 
