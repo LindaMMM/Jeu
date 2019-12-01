@@ -20,7 +20,8 @@
     public function __construct($dbb){
         $this->setMydb($dbb);
         $this->today = date("Y-m-d");
-        $this->day=date("d");
+        $day1 = date("d");
+        $this->day=intval($day1);
     }
   
   function __call($m,$p) {
@@ -54,12 +55,15 @@
             $this->estGagne = false;
             // check la date
             $this->checkDateJour();
-            
+        //    echo $this->today;
+         //   echo $this->day;
             //
             // $this->day=2;
             // $this->today=date('2019-12-02');
            
             if($this->mydb->beginTransaction()){
+      //          echo "tr";
+            
                 try 
                 {
                 
@@ -71,11 +75,12 @@
                     $this->UpdateCadeau($userid);
                     $this->UpdatelibCadeau();
                 }
-                
+            
                 // mise à jour du jour du jeu
                 $this->UpdateJeu($userid);
                 if($this->valid)
                 {
+    //                echo "Valide";
                     $this->mydb->commit();
                 }
                 else{
@@ -101,8 +106,9 @@
 
     private function checkDateJour()
     {
-        $today=date("Ymd");
-        if ($today < 20191201 || $today > 20191224) 
+  //      echo "check";
+        $today_here = date("Ymd");
+        if ($today_here < 20191201 || $today > 20191224) 
         {
             throw new Exception("Vous ne pouvez pas jouer");
         }
@@ -154,9 +160,10 @@
         {
             $valday='G';
         }
-        $query = "UPDATE `jeunoel` SET $libday = ? WHERE `user_app_iduser_app` = ?";
-       
-        $count = $this->mydb->execReturnBool($query,$valday, $userid);
+
+        $queryJeu = "UPDATE `jeunoel` SET $libday = ? WHERE `user_app_iduser_app` = ?";
+//        echo $queryJeu.$valday.$userid  ;
+        $count = $this->mydb->execReturnBool($queryJeu, $valday, $userid);
         
         if ($count == 1)
         {
