@@ -64,7 +64,7 @@
     {
         try 
         {
-        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app";
+        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app  order by `dateGain` DESC";
        
         $result = $this->mydb->fetchAll($query);
         if ($result && count($result)> 0 )
