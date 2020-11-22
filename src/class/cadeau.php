@@ -109,9 +109,9 @@
 
     public function calculTirage($datecal){
        
-       $query = "CALL prTirageJour(?)";
+       $query = "CALL prTirageJour_tmp()";
        
-       $result = $this->mydb->fetchAll($query,$datecal );
+       $result = $this->mydb->fetchAll($query);
      return $result; 
     }
 }

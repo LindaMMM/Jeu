@@ -56,12 +56,15 @@
             $this->estGagne = false;
             // check la date
             $this->checkDateJour();
-            
+        //    echo $this->today;
+         //   echo $this->day;
             //
-            // $this->day=2;
-            // $this->today=date('2019-12-02');
-           
+             //$this->day=24;
+             //$this->today=date('2019-12-24');
+             
             if($this->mydb->beginTransaction()){
+      //          echo "tr";
+            
                 try 
                 {
                 
@@ -69,15 +72,17 @@
                 // lecture du tirage
                 
                 if($this->readTirage($userid)){
+                   
                     // mise à jour du cadeau
                     $this->UpdateCadeau($userid);
                     $this->UpdatelibCadeau();
                 }
-                
+            
                 // mise à jour du jour du jeu
                 $this->UpdateJeu($userid);
                 if($this->valid)
                 {
+    //                echo "Valide";
                     $this->mydb->commit();
                 }
                 else{
@@ -115,6 +120,24 @@
     private function readTirage($userid){
         $query = "SELECT Cadeau_idCadeau as IDCADEAU FROM tirage where datetir = ? and user_app_iduser_app = ?";
         $result = $this->mydb->fetchAll($query, $this->today, $userid);
+        if ($result && count($result)> 0 )
+        {
+            $this->idCadeau= $result[0]->IDCADEAU;
+            $this->estGagne= true;
+            return true ;
+        }
+        
+        if($this->day == 24){
+            return $this->tirage24();
+        }
+        return false;
+    }
+
+    // lecture du tirage
+    private function tirage24(){
+       
+        $query = "SELECT idCadeau as IDCADEAU FROM cadeau where Agagner = '2019-12-25' and dateGain is null limit 1 ";
+        $result = $this->mydb->fetchAll($query);
         if ($result && count($result)> 0 )
         {
             $this->idCadeau= $result[0]->IDCADEAU;
