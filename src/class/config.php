@@ -14,8 +14,8 @@ error_reporting(0);
 /*LES VARIABLES A MODIFIER :
 /*-----------------------------------------------------------------*/
 
-$MYSQL_USER="root";	
-$MYSQL_PASS="";
+$MYSQL_USER="username";	
+$MYSQL_PASS="Mot2PasseSecret";
 $MYSQL_SERVER="localhost";
 $db_login="logindb";
 define('DB_CSE', "$MYSQL_SERVER|$MYSQL_USER|$MYSQL_PASS|$db_login");
