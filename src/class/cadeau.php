@@ -11,9 +11,13 @@
     protected $id = 0; 
     protected $libelle,$gagant;
 	protected $valid=false;
- 
+    protected $annee;
+
     public function __construct($dbb){
         $this->setMydb($dbb);
+        $dateNow = new DateTime("now");
+        $this->annee = $dateNow->format('Y');
+
     }
   
   function __call($m,$p) {
@@ -64,9 +68,9 @@
     {
         try 
         {
-        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app";
+        $query="select c.Description as cadeau, case when c.dateGain  is NULL then '2019-12-24' else c.dateGain end as dateGain, case when u.sso_id is null then 'A gagner' else  u.sso_id end as gagant from cadeau c inner join user_app u on u.iduser_app =c.user_app_iduser_app where annee = ?";
        
-        $result = $this->mydb->fetchAll($query);
+        $result = $this->mydb->fetchAll($query, $this->annee);
         if ($result && count($result)> 0 )
             {
                 
@@ -89,8 +93,8 @@
     {
         try 
         {
-            $query="SELECT count(idCadeau) as nbCadeau, count(distinct user_app_iduser_app, dateGain) as nbCadeauGagner  FROM cadeau";
-            $result = $this->mydb->fetchAll($query);
+            $query="SELECT count(idCadeau) as nbCadeau, count(distinct user_app_iduser_app, dateGain) as nbCadeauGagner  FROM cadeau where annee = ?";
+            $result = $this->mydb->fetchAll($query, $this->annee);
             if ($result && count($result)> 0 )
             {
                 return $result;
@@ -105,9 +109,9 @@
 
     public function calculTirage($datecal){
        
-       $query = "CALL prTirageJour(?)";
+       $query = "CALL prTirageJour_tmp()";
        
-       $result = $this->mydb->fetchAll($query,$datecal );
+       $result = $this->mydb->fetchAll($query);
      return $result; 
     }
 }

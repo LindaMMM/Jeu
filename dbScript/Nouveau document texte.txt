@@ -1,0 +1,1 @@
+SELECT * FROM `tirage` t left join jeunoel j on j.user_app_iduser_app= t.user_app_iduser_app where t.`datetir`= '2019-12-05' 

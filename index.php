@@ -4,12 +4,16 @@ require_once "./src/class/config.php";
 require('./src/controller/accueil.php');
 date_default_timezone_set('Europe/Paris');
 
-$dateSrc = '2019-11-30';
-$date1 = new DateTime("now");
-$date2 = new DateTime($dateSrc);
+// Date actuel
+$dateNow = new DateTime("now");
+/*** Attention à supprimer */
+// $dateNow = new DateTime("2020-12-02");
+
+// date de la 1er jour du jeu
+$datefirstDay = new DateTime($dateNow->format('Y').'-12-01');
 
 
-if ($date1 < $date2) {
+if ($datefirstDay <= $dateNow) {
     if (isset($_GET['page'])) {
         if ($_GET['page'] == 'accueil') {
             accueil();

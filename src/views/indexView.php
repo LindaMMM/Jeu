@@ -21,9 +21,7 @@
                         <strong>Le père breizh noel</strong> <small>@breizhnoel</small> <small>31m</small>
                         <br>
                         Ohohoh (géééééééééant vert)<br/>
-                        Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot.
-                        Vu que c'est avant Noel, te plains pas si tu as perdu et que tu n'as pas de cadeau !
-                        Ca viendra le 25.<br/>
+                        Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot. Vu que c'est avant Noel, ne te plains pas si tu as perdu et que tu n'as pas de cadeau ! Ça viendra le 25.<br/>
                         Je t'en prie, fais toi plaisir.
                     </p>
                 </div>

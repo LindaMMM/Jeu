@@ -1,4 +1,4 @@
-<?php $title = '<i class="fas fa-award has-text-dark" style="font-size: 48px;"></i>&nbsp;Qui a gagné ?'; ?>
+<?php $title =  '<i class="fas fa-award has-text-dark" style="font-size: 48px;"></i>&nbsp;Qui a gagné ?'; ?>
 <?php ob_start(); ?>
 
 <div class="box">
@@ -19,8 +19,9 @@
                         <strong>Le père breizh noel</strong> <small>@breizhnoel</small> <small>31m</small>
                         <br>
                         Benlors on s'est perdu ?<br/>
-                        Aaaah Non, tu cherches à savoir qui a gagné. Prépare ton mouchoir si tu n'as pas jouer, tu n'as pas gagné. Ca ne sert à rien de rafraichir cette page.<br/>
-                        Profite du bonheur des autres ou savoure bien de te voir nomé sur la page. Ca fait du bien de se faire mousser  !
+                        Aaaah Non, tu cherches à savoir qui a gagné. Prépare ton mouchoir si tu n'as pas joué, tu n'as pas gagné. Ça ne sert à rien de rafraichir cette page.<br/>
+                        Profite du bonheur des autres ou savoure bien de te voir nomé sur la page. Ça fait du bien de se faire mousser  !
+
                     </p>
                 </div>
             </div>
