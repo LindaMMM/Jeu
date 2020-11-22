@@ -31,7 +31,7 @@ function GenerateDiv(json, type = 'jours') {
                 subtitle = 'ohoho ! Ouvre !';
                 perso = 'Le père breizh noel';
                 text = 'Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.<br/>Ouvre vite pour savoir !';
-                $('#date').html(k + '/12/2019');
+                $('#date').html(k + '/12/2020');
                 choosen = true;
             } else if (choosen && obj[k] != 'E') {
                 console.log('second');
@@ -69,6 +69,8 @@ function GenerateDiv(json, type = 'jours') {
         }
         html += last;
         $('#res_jours').html(html);
+        var d = new Date();
+         $('#date').html(d.toLocaleDateString());
 
     }
     if (type == 'top') {
@@ -82,7 +84,10 @@ function GenerateDiv(json, type = 'jours') {
         }
         html += last;
         $('#top').html(html);
+        var d = new Date();
+        $('#date').html(d.toLocaleDateString());
 }
+
 
 }
 

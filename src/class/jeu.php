@@ -13,10 +13,13 @@ class Jeu implements JsonSerializable {
     protected $jour1, $jour2, $jour3, $jour4, $jour5, $jour6, $jour7, $jour8, $jour9, $jour10;
     protected $jour11, $jour12, $jour13, $jour14, $jour15, $jour16, $jour17, $jour18, $jour19, $jour20;
     protected $jour21, $jour22, $jour23, $jour24;
+    protected $annee;
     protected $valid = false;
 
     public function __construct($dbb) {
         $this->setMydb($dbb);
+        $dateNow = new DateTime("now");
+        $this->annee = $dateNow->format('Y');
     }
 
     function __call($m, $p) {
@@ -66,9 +69,9 @@ class Jeu implements JsonSerializable {
                 $this->createJeu($userid);
             }
             $queryDay = $this->buildQueryDay();
-            $query = "SELECT idjeuNoel, $queryDay `user_app_iduser_app`   FROM `jeunoel` where user_app_iduser_app=?";
+            $query = "SELECT idjeuNoel, $queryDay `user_app_iduser_app`   FROM `jeunoel` where user_app_iduser_app = ? and annee = ?";
 
-            $result = $this->mydb->fetchAll($query, $userid);
+            $result = $this->mydb->fetchAll($query, $userid, $this->annee);
             if ($result && count($result) > 0) {
                 $this->setValid(true);
                 $this->setId($result[0]->idjeuNoel);
@@ -126,8 +129,8 @@ class Jeu implements JsonSerializable {
     }
 
     private function isExistLogin($login) {
-        $query = "SELECT count(*) as count FROM jeunoel where user_app_iduser_app = ?";
-        $result = $this->mydb->fetchAll($query, $login);
+        $query = "SELECT count(*) as count FROM jeunoel where user_app_iduser_app = ? and annee = ?";
+        $result = $this->mydb->fetchAll($query, $login,$this->annee);
         if ($result && count($result) > 0) {
             return $result[0]->count > 0;
         }
@@ -139,8 +142,8 @@ class Jeu implements JsonSerializable {
     }
 
     public function createJeu($userid) {
-        $query = "insert into jeunoel (user_app_iduser_app) values (?)";
-        $count = $this->mydb->execReturnBool($query, $userid);
+        $query = "insert into jeunoel (user_app_iduser_app, annee) values (?, ?)";
+        $count = $this->mydb->execReturnBool($query, $userid,$this->annee);
         if ($count === true) {
             return true;
         }

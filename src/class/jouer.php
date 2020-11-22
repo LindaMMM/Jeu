@@ -14,13 +14,15 @@
     protected $libGain;
     protected $estGagne=false;
 	protected $valid=false;
-    protected $today,$day;
+    protected $today,$day,$annee;
     // protected $datetoday = date("Y-m-d");
    //  protected $day=date("d");
     public function __construct($dbb){
         $this->setMydb($dbb);
         $this->today = date("Y-m-d");
         $this->day=date("d");
+        $this->annee = date("Y");
+        $this->today=date('2020-12-22');
     }
   
   function __call($m,$p) {
@@ -101,8 +103,9 @@
 
     private function checkDateJour()
     {
+
         $today=date("Ymd");
-        if ($today < 20191201 || $today > 20191224) 
+        if ($this->day < 1 || $this->day > 24) 
         {
             throw new Exception("Vous ne pouvez pas jouer");
         }
@@ -154,9 +157,9 @@
         {
             $valday='G';
         }
-        $query = "UPDATE `jeunoel` SET $libday = ? WHERE `user_app_iduser_app` = ?";
+        $query = "UPDATE `jeunoel` SET $libday = ? WHERE `user_app_iduser_app` = ? and annee = ?";
        
-        $count = $this->mydb->execReturnBool($query,$valday, $userid);
+        $count = $this->mydb->execReturnBool($query,$valday, $userid,$this->annee);
         
         if ($count == 1)
         {
