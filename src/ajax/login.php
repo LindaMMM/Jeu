@@ -30,6 +30,7 @@ try {
          $respond->message="Login ok ";
          $_SESSION["ssoid"]=$login;
          $_SESSION["iduser"]=$connexion->getId();
+	$_SESSION["test"] = $login;
         
 	}
     else

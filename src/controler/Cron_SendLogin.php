@@ -10,7 +10,7 @@
       <body>
         <!-- Insérer ici le code de mail php -->
 <?php
-try {
+
 
 // Sujet
 $subject = "[cseCogelec] Calendrier de l'avant"; 
@@ -22,9 +22,26 @@ $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
 $headers .= 'From: Mail de test <no-reply@csecogelec.fr>' . "\r\n";
 $site = 'https://calendrier2noel.csecogelec.fr/';
     error_log("Send Login". 0);
-    $output = UserCtrl::GetAllUser();
+    $MYSQL_USER="csecogeleocal";	
+$MYSQL_PASS="MDnJ73m9y";
+$MYSQL_SERVER="csecogeleocal.mysql.db";
+$db_login="csecogeleocal"; 
+    try
+    {
+        $db = new PDO("mysql:host=$MYSQL_SERVER;dbname=$db_login;charset=utf8", $MYSQL_USER, $MYSQL_PASS);
+    }
+    catch(Exception $e)
+    {
+        die('Erreur : '.$e->getMessage());
+    }
+
+    $req = $db->prepare('SELECT iduser_app, sso_id, pwd_hash, email FROM user_app where del is nul');
+    $req->execute();
+    $output = $req->fetchAll(PDO::FETCH_OBJ);
+    
+
     foreach ($output as $od) {
-      if ($od['email'] =='lmartin@cogelec.fr'){
+      if ($od['email'] =='linda49martin@gmail.com'){
           // Destinataire
           $to = $od['email']  ;
           // Message
@@ -61,24 +78,8 @@ $site = 'https://calendrier2noel.csecogelec.fr/';
         }
       
     }
-    
-    
     echo var_dump($output);
-    	 
-} 
- catch (Exception $e) {
-  $respond->code= -5;
-  error_log(var_dump($e.getMessage()));
-  $respond->message= "Le site a rencontré un problème.";
-}
-
- 
-
- 
-
- 
-
-
+    
 
 echo "Fin";
 ?>

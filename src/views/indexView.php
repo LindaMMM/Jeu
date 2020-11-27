@@ -20,9 +20,11 @@
                     <p>
                         <strong>Le père breizh noel</strong> <small>@breizhnoel</small> <small>31m</small>
                         <br>
-                        Ohohoh (géééééééééant vert)<br/>
-                        Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot. Vu que c'est avant Noel, ne te plains pas si tu as perdu et que tu n'as pas de cadeau ! Ça viendra le 25.<br/>
-                        Je t'en prie, fais toi plaisir.
+                        Ohohoh !<br/>
+                        Salut mes gars ! Chaque jour, ici, vous pourrez jouer et gagner un lot.
+                        Vu que c'est avant Noel, ne vous plaignez pas. Si vous avez perdu et que vous n'avez pas de cadeau,
+                        ça viendra le 25.<br/>
+                        En attendant, tentez de gagner.
                     </p>
                 </div>
             </div>
@@ -34,7 +36,21 @@
 
     <div class="section has-text-centered has-background-grey-lighter">
         <div class="box">
-            <div class="subtitle is-1"> <span id="rest_gift"></span> <i class="fas fa-gift"></i></div>
+            <div class="columns">
+                
+                <div class="column has-text-centered is-size-1 is-5">
+                    <span id="rest_gift">179</span> pauvres petits cadeaux...
+                </div>
+                <div class="column has-text-centered is-2">
+                    <i class="fas fa-tree" style='color:#5CB0A1'></i><i class="fas fa-tree" style='color:#5CB0A1'></i><i class="fas fa-tree" style='color:#5CB0A1'></i><i class="fas fa-tree" style='color:#5CB0A1'></i><i class="fas fa-tree" style='color:#5CB0A1'></i>
+                    <div><i class="fas fa-gift" style="width:20px;color:#E61A24" ></i></div>
+                    <div><i class="fas fa-road" style="font-size: 48px;"></i></div>
+                    <i class="fas fa-male" style="font-size: 48px;color:#41699E"></i>
+                </div>
+                <div class="column has-text-centered is-size-1 is-5">
+                    ...n'ont toujours pas été gagnés !
+                </div>      
+            </div>
             <p class="title has-text-white"><progress class="progress" id="progress_gift">1er jour</progress></p>
         </div>
     </div>

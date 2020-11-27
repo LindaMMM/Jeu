@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
-  include("../class/config.php");
+ /* include("../class/config.php");*/
 ?>
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
@@ -11,13 +11,30 @@
         <!-- Insérer ici le code de mail php -->
 <?php
 try {
-    $dateCal = new DateTime();
+  $MYSQL_USER="csecogeleocal";	
+$MYSQL_PASS="MDnJ73m9y";
+$MYSQL_SERVER="csecogeleocal.mysql.db";
+$db_login="csecogeleocal"; 
+try
+    {
+        $db = new PDO("mysql:host=$MYSQL_SERVER;dbname=$db_login;charset=utf8", $MYSQL_USER, $MYSQL_PASS);
+    }
+    catch(Exception $e)
+    {
+        die('Erreur : '.$e->getMessage());
+    }
+
+    $req = $db->prepare('CALL prTirageJour_tmp()');
+    $req->execute();
+    $post = $req->fetch();
+
+   /* $dateCal = new DateTime();
     // $dateCal = date('Y-m-d');
     // $dateCal = date('2019-12-02');
     error_log("lancement du calcul".var_dump($dateCal), 0);
     $output = UserCtrl::CalculTirage($dateCal);
     echo var_dump($output);
-    	 
+    */	 
 } 
  catch (Exception $e) {
   $respond->code= -5;

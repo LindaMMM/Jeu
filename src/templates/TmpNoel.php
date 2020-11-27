@@ -22,7 +22,7 @@ header("Pragma:no-cache");
     <body>
 
         <section class="hero is-fullheight">
-            <div class="pageloader is-active"><span class="title">Tu me vois... tu ne me verras plus.</span></div>
+            <div class="pageloader is-active"><span class="title">Chargement du traineau en cours.</span></div>
             <div class="hero-head" style="z-index:1">
                 <a role="button" class="navbar-burger has-text-white is-fixed-top " data-target="navMenu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -36,7 +36,7 @@ header("Pragma:no-cache");
                             <span>
                                 <p class="heading">
                                     <span class="tag is-info has-text-black"><i class="fas fa-calendar-minus" style="font-size: 48px;"></i>&nbsp;Nous sommes le </span></p>
-                                <p class="to-hide has-text-black" id="date">01/12/2019</p></span>
+                                <p class="to-hide has-text-black" id="date">02/12/2019</p></span>
 
 
                         </div>

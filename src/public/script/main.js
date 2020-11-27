@@ -30,7 +30,7 @@ function GenerateDiv(json, type = 'jours') {
                 title = 'On t\'attend !';
                 subtitle = 'ohoho ! Ouvre !';
                 perso = 'Le père breizh noel';
-                text = 'Tu as peut être gagné le 4x4 de Roger ou... une clé kibolt.<br/>Ouvre vite pour savoir !';
+                text = 'Tu as peut être gagné une des voitures de Roger, une clé Kibolt ou une platine Intratone.<br/>Ouvre vite pour savoir !';
                 $('#date').html(k + '/12/2020');
                 choosen = true;
             } else if (choosen && obj[k] != 'E') {
@@ -40,7 +40,7 @@ function GenerateDiv(json, type = 'jours') {
                 title = 'Tu attends !';
                 subtitle = 'Déso... déso ';
                 perso = 'Le lutin du malheur';
-                text = 'Bon... écoute. On n\'est pas prêt...<br/>T\'as ton éléphant Jumbo pour t\'aider à décompresser et patienter ?';
+                text = 'C\'est pas le moment. On n\'est pas prêt...<br/>T\'as ton éléphant Jumbo pour t\'aider à décompresser et patienter ?';
             } else {
                 fond_url = 'src/public/img/fond-end.png';
 

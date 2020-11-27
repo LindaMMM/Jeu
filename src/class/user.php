@@ -91,7 +91,30 @@
         $_id = intval($this->id);
         $result = $this->mydb->fetchAll($query,$_id );
         return $result; 
-	}
+    }
+    
+    public function getAll()
+    {
+        try 
+        {
+        $query = "SELECT iduser_app, sso_id, pwd_hash, email FROM user_app where del is null";
+       
+        $result = $this->mydb->fetchAll($query);
+        if ($result && count($result)> 0 )
+            {
+                
+                return $result;
+            }
+       
+        }  
+        catch(Exception $e)
+        {
+            // echo $e->getMessage();
+            throw new Exception("Error user.GetAll");
+        }
+        
+        return null;
+    }
    
 
 }

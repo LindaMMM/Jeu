@@ -14,10 +14,10 @@ error_reporting(0);
 /*LES VARIABLES A MODIFIER :
 /*-----------------------------------------------------------------*/
 
-$MYSQL_USER="csecogeleocal";	
-$MYSQL_PASS="MDnJ73m9y";
-$MYSQL_SERVER="csecogeleocal.mysql.db";
-$db_login="csecogeleocal";
+$MYSQL_USER="username";	
+$MYSQL_PASS="Mot2PasseSecret";
+$MYSQL_SERVER="localhost";
+$db_login="logindb";
 define('DB_CSE', "$MYSQL_SERVER|$MYSQL_USER|$MYSQL_PASS|$db_login");
 
 ?>
