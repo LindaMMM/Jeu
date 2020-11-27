@@ -66,4 +66,11 @@ class UserCtrl {
 		$Cadeau= new Cadeau($bd);
 		return $Cadeau->calculTirage($datecal);
 	}
+
+	public static function GetAllUser()
+	{
+		$bd= new Database(DB_CSE);
+		$user= new User($bd);
+		return $user->GetAll();
+	}
 }
