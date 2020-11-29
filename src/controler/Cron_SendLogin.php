@@ -19,7 +19,7 @@ $headers = "MIME-Version: 1.0" . "\n";
 $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
  
 // En-têtes additionnels
-$headers .= 'From: Mail de test <no-reply@csecogelec.fr>' . "\r\n";
+$headers .= 'From: CSECogelec <no-reply@csecogelec.fr>' . "\r\n";
 $site = 'https://calendrier2noel.csecogelec.fr/';
     error_log("Send Login". 0);
     $MYSQL_USER="csecogeleocal";	
@@ -34,14 +34,18 @@ $db_login="csecogeleocal";
     {
         die('Erreur : '.$e->getMessage());
     }
-
-    $req = $db->prepare('SELECT iduser_app, sso_id, pwd_hash, email FROM user_app where del is nul');
+    try
+    {
+      echo "login";
+    $req = $db->prepare('SELECT iduser_app, sso_id, pwd_hash, email FROM user_app where del is null');
     $req->execute();
-    $output = $req->fetchAll(PDO::FETCH_OBJ);
-    
-
-    foreach ($output as $od) {
-      if ($od['email'] =='linda49martin@gmail.com'){
+    $output = $req->fetchAll(PDO::FETCH_ASSOC);
+    echo "requete";
+   
+    foreach ($output as $row => $od) {
+      
+      // if ($od['email'] =='linda49martin@gmail.com')
+      
           // Destinataire
           $to = $od['email']  ;
           // Message
@@ -53,14 +57,14 @@ $db_login="csecogeleocal";
           <body>
             <table width="100%" border="0" cellspacing="0" cellpadding="5">
             <tr>
-              <td align="center">
+              <td>
                 <p>
-                Bonjour à tous,
-                Le site du calendrier de noel arrive bientôt, on te rappelle comment tu peux y accéder
-                Login : '.$od['ssoid'].' <br>
+                Bonjour à tous,<br>
+                Le site du calendrier de noel arrive bientôt, on te rappelle comment tu peux y accéder <br>
+                Login : '.$od['sso_id'].' <br>
                 Mot de passe : '.$od['pwd_hash'].' <br>  
                 Site : '.$site.' <br>  
-                Bonne participation à tous.
+                Bonne participation à tous . <br>
                 Votre équite du CSE
                 </p>
                 <p>
@@ -75,10 +79,15 @@ $db_login="csecogeleocal";
         // Envoie
         $resultat = mail($to, $subject, $message, $headers);
         
-        }
+        echo "<br> opt :".$od['email']." Resultat ".$resultat;
       
     }
-    echo var_dump($output);
+  }
+    catch(Exception $e)
+    {
+        die('Erreur requete : '.$e->getMessage());
+    }
+    // echo var_dump($output);
     
 
 echo "Fin";
